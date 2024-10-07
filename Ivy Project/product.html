@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Shop-Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
     <!--------------------------------Header-------------------------------->
@@ -71,22 +71,73 @@
             <li><a class="fa fa-shopping-bag" href=""></a></li>
         </div>
     </header>
-    <!--------------------------------Slider-------------------------------->
-    <section id="Slider">
-        <div class="aspect-ratio-169">
-            <img src="images/slider_1.jpg">
-            <img src="images/slider_2.webp">
-            <img src="images/slider_3.jpeg">
-            <img src="images/slider_4.jpg">
+    <!--------------------------------Product---------------------------------->
+    <section class = "product">
+        <div class="container">
+            <div class="product-top row">
+                <p>Menu</p><span>&#8594;</span><p>ЖЕНЩИНА</p><span>&#8594;</span><p>Новинки</p><span>&#8594;</span> <p>Tên sản phẩm</p>
+            </div>
         </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+        <div class="product-content row">
+            <div class="product-content-left row">
+                <div class="product-content-left-big-img">
+                    <img src="./images/sp1.1.webp" alt="">
+                </div>  
+                <div class="product-content-left-small-img">
+                    <img src="./images/sp1.1.webp" alt="">
+                    <img src="./images/sp1.2.webp" alt="">
+                    <img src="./images/sp1.3.webp" alt="">
+                    <img src="./images/sp1.4.webp" alt="">
+                </div>
+            </div>
+            <div class="product-content-right">
+                <div class="product-content-right-product-name">
+                    <h1 class="text-uppercase">Tên sản phẩm</h1>
+                    <p>MSP: 567E2969</p>
+                </div>
+                <div class="product-content-right-product-price">
+                    <p>1.500.500<sub>đ</sub></p>
+                </div>
+                <div class="product-content-right-product-color">
+                    <p><span style="font-weight: bold;">Màu sắc</span> : Xanh cổ vịt nhat</p><span style="color: red;"></span>
+                    <div class="product-content-right-product-color-img">
+                        <img src="./images/color004.png" alt="">
+                    </div>
+                </div>
+                <div class="product-content-right-product-size">
+                    <p style="font-weight: bold;">Size: </p>
+                    <div class="size">
+                        <span>S</span>
+                        <span>M</span>
+                        <span>L</span>
+                        <span>XL</span>
+                        <span>XXL</span>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <p style="font-weight: bold; padding-right: 6px;">Số lượng : </p>
+                    <input style="width: 50px; text-align: center;" type="number" min="0" value="1">
+                </div>
+                <p style="color: red;">Vui lòng chọn size</p>
+                <div class="product-content-right-product-button">
+                    <button><i class="fas fa-shopping-cart"></i><p>MUA HÀNG</p></button>
+                    <button><p>TÌM TẠI CỬA HÀNG</p></button>
+                </div>
+                <div class="product-content-right-product-icon">
+                    <div class="product-content-right-product-icon-item"><i class="fas fa-phone-alt"></i> <p>Hotline</p></div>
+                    <div class="product-content-right-product-icon-item"><i class="far fa-comments"></i> <p>Chat</p></div>
+                    <div class="product-content-right-product-icon-item"><i class="far fa-envelope"></i> <p>Mail</p></div>
+                </div>
+                <div class="product-content-right-product-OR">
+                    <img style="width: 100px;" src="./images/QR_code.svg" alt="">
+                </div>
+                <div class="product-content-right-product-bottom">
+                    <div class="product-content-right-product-bottom-top">
+                        &#8744;
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </section>
     <!--------------------------------Container-------------------------------->
     <section class="app-container">
@@ -119,47 +170,5 @@
         <div class="footer-bootom">Lorem ipsum dolor sit</div>
     </footer>
 
-
 </body>
-<script>
-// --------------------------Menu-Navigation---------------------------------------
-    const header = document.querySelector("header")
-    window.addEventListener("scroll", function(){
-        x = window.pageYOffset
-        if(x > 0){
-            header.classList.add("active")
-        }else{
-            header.classList.remove("active")
-        }
-    })
-
-
-    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
-    const imgContainer = document.querySelector('.aspect-ratio-169')
-    const dotItem = document.querySelectorAll(".dot")
-    let imgNumber = imgPosition.length
-    let index = 0
-
-    imgPosition.forEach(function(image,index){
-        image.style.left = index * 100 + "%"
-        dotItem[index].addEventListener("click", function(){
-            slider(index)
-        })
-    })
-
-// --------------------------Menu-Slider---------------------------------------
-    function imgSlide(){
-        index++;
-        if(index >= imgNumber) {index = 0}
-        slider(index)
-    }
-    function slider(index){
-        imgContainer.style.left = "-" + index*100 + "%"
-        const dotActive = document.querySelector(".active")
-        dotActive.classList.remove("active")
-        dotItem[index].classList.add("active")
-    }
-    setInterval(imgSlide, 5000);
-</script>
-
 </html>
