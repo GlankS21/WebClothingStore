@@ -42,46 +42,38 @@ header{
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
-
 header.active{
     background: rgba(255, 255, 255, 1);
 }
-
 header:hover{
     background: rgba(255, 255, 255, 1);
 }
-
 .logo{
     flex: 1;
     text-align: center;
 }
-
 .menu{
     flex: 3;
     display: flex;
 }
-
 .menu > li{
     padding: 0 20px;
     position: relative;
 }
-
 .menu > li > a{
-    font-size: 12px;
+    font-size: 16px !important;
     font-weight: bold !important;
     display: block;
     line-height: 20px;
 }
-
 .menu li a{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
-
 .sub-menu{
     background-color: #fff;
     position: absolute;
-    width: 150px;
+    width: 200px;
     border: 1px solid #ccc;
     padding: 10px 10px 10px 20px;
     visibility: hidden;
@@ -91,13 +83,10 @@ header:hover{
     z-index: 1;
     background: #fff;
 }
-
 .menu > li:hover .sub-menu{
     visibility:visible;
     top: 30px;
 }
-
-
 .sub-menu ul a{
     color: rgba(0, 26, 52, 0.6);
     padding: 4px 0 4px 15px;
@@ -105,23 +94,19 @@ header:hover{
     font-weight: normal;
     display: block;
 }
-
 .sub-menu ul li:hover a{
     background: #ccc;
     color: #000;
 }
-
 .others{
     flex: 1;
     display: flex;
 }
-
 .others > li{
     padding: 0 12px;
     position: relative;
     line-height: 26px;
 }
-
 .others > li::after{
     position: absolute;
     content: "";
@@ -133,11 +118,9 @@ header:hover{
     top: 50%;
     transform: translateY(-50%);
 }
-
 .others > li:first-child{
     position: relative;
 }
-
 .others > li:first-child input{
     width: 100%;
     min-width: 80px;
@@ -147,31 +130,25 @@ header:hover{
     background: transparent;
     outline: none;
 }
-
 .others > li:first-child i{
     position: absolute;
     right: 16px;
     top: 5px
 }
-
 .others > li:last-child::after{
     display: none;
 }
-
 /* -------------------------Slider------------------------- */
 #Slider{
     padding-bottom: 30px;
-    border-bottom: 2px solid #000;
     overflow: hidden;
 }
-
 .aspect-ratio-169{
     display: block;
     position: relative;
     padding-top: 46.25%;
     transition: 0.3s;
 }
-
 .aspect-ratio-169 img{
     display: block;
     position: absolute;
@@ -180,7 +157,6 @@ header:hover{
     top: 0;
     left: 0;
 }
-
 .dot-container{
     position: absolute;
     height: 30px;
@@ -189,7 +165,6 @@ header:hover{
     align-items: center;
     justify-content: center;
 }
-
 .dot{
     height: 16px;
     width: 16px;
@@ -198,18 +173,16 @@ header:hover{
     margin-right: 12px;
     cursor: pointer;
 }
-
 .dot.active {
     background-color: #333;
 }
-
 /* -------------------------Container------------------------- */
 .app-container{
     text-align: center;
     align-items: center;
-    padding: 150px 0 50px 0;
+    padding: 100px 0 50px 0;
+    border-top: 2px solid #ccc;
 }
-
 .app-container p{
     line-height: 20px;
     letter-spacing: 1px;
@@ -217,7 +190,6 @@ header:hover{
     color: #000;
     font-weight: bold;
 }
-
 .app-container input{
     margin-top: 50px;
     border: none;
@@ -227,21 +199,17 @@ header:hover{
     text-align: center;
     outline: none;
 }
-
 .app-google{
     margin: 50px;
 }
-
 .app-google img{
     height: 50px;
     cursor: pointer;
 }
-
 /* -------------------------Footer------------------------- */
 footer{
     text-align: center;
 }
-
 .footer-top{
     display: flex;
     text-align: center;
@@ -250,16 +218,13 @@ footer{
     margin-bottom: 20px;
     height: 70px;
 }
-
 .footer-top img{
     height: 40px;
 }
-
 .footer-top li{
     padding: 0 12px;
     position: relative;
 }
-
 .footer-top li::after{
     position: absolute;
     content: "";
@@ -271,59 +236,43 @@ footer{
     top: 50%;
     transform: translateY(-50%);
 }
-
 .footer-top li:last-child::after{
     display: none;
 }
-
 .footer-top li:last-child a{
     margin-right: 12px;
     color: #333;
 }
-
-footer p span{
-    font-weight: bold;
-}
-
-.footer-bottom{
-    margin: 20px;
-}
-
-
 /* -------------------------Cartegory------------------------- */
 .cartegory{
     padding: 100px 100px;
 }
-
 .cartegory-top{
     margin-bottom: 50px;
 }
-
 .cartegory-top p{
     font-family: var(--main-text-font);
     margin: 0 12px;
     font-size: 12px;
 }
-
+.cartegory-top span{
+    line-height: 14px;
+}
 .cartegory-left{
     width: 20%;
 }
-
 .cartegory-right{
     width: 80%;
 }
-
 .cartegory-right-top-item{
     flex: 1;
     padding: 0 12px;
 }
-
 .cartegory-right-top-item:first-child{
     flex: 2;
     font-size: 16px;
     font-weight: bold;
 }
-
 .cartegory-right-top-item button, select{
     width: 100%;
     padding: 10px 15px;
@@ -333,80 +282,67 @@ footer p span{
     border: 1px solid #ddd;
     cursor: pointer;
 }
-
 .cartegory-right-content{
     margin-top: 20px;
     justify-content: space-between;
 }
-
 .cartegory-right-content-item{
     width: calc(25% - 12px);
     text-align: center;
     padding: 12px 0;
 }
-
 .cartegory-right-content-item h1{
     font-size: 11px;
     font-family: var(--main-text-font);
     margin-top: 6px;
     color: #333;
 }
-
 .cartegory-right-content-item img{
     width: 100%;
 }
-
 .cartegory-right-content-item p{
     font-size: 12px;
 }
-
 .cartegory-right-bottom{
     justify-content: space-between;
     margin: 30px 0 20px;
     width: 100%;
 }
-
 .cartegory-right-bottom p{
     font-family: var(--main-text-font);
     font-size: 11px;
 }
-
 .cartegory-left ul li{
-    padding: 12px 0;
+    padding-top: 18px;
 }
-
+.cartegory-left ul li:last-child{
+    padding-bottom: 18px;
+}
 .cartegory-left ul li > a{
     color: #000;
     font-size: 16px;
     font-weight: bold;
 }
-
 .cartegory-left ul li ul li{
     padding-left: 10px;
 }
-
 .cartegory-left-li ul{
     display: none;
 }
-
 .cartegory-left-li.block ul{
     display: block;
 }
-
 .cartegory-left ul li ul li a{
     color: #333;
-    font-size: 13px;
+    font-size: 14px;
 }
-
 /* ----------------------------Product--------------------------------------- */
 .product{
     padding: 100px 100px 0 100px;
 }   
-
 .product-top{
     margin-bottom: 30px;   
 }
-
 .product-top p{
     font-family: var(--main-text-font);
     margin: 0 12px;
@@ -419,23 +355,20 @@ footer p span{
     width: 80%;
     padding-right: 20px;
 }
-
 .product-content-left-big-img img{
     width: 100%;
 }
-
 .product-content-left-small-img{
     width: 20%;
 }
-
 .product-content-left-small-img img{
     width: 100%;
+    cursor: pointer;
 }
 .product-content-right{
     width: 50%;
     padding-left: 20px;
 }
-
 .product-content-right-product-name h1{
     font-family: var(--main-text-font);
     font-size: 20px;
@@ -477,7 +410,7 @@ footer p span{
     padding-left: 3px;
 }
 .product-content-right-product-button button{
-    width: 150px;
+    width: 170px;
     height: 40px;
     display: block;
     margin: 20px 0 12px;
@@ -516,4 +449,82 @@ footer p span{
 }
 .product-content-right-product-QR{
     margin: 20px 0;
+}
+.product-content-right-bottom{
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+.product-content-right-bottom-top{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.product-content-right-bottom-content-title{
+    border-bottom: 2px solid rgb(247, 247, 247);   
+}
+.product-content-right-bottom-content-title-item{
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+.product-content-right-bottom-content-title-item p{
+    font-family: var(--main-text-font);
+    font-size: 12x;
+}
+.product-content-right-bottom-content{
+    padding-top: 30px;
+}
+.product-content-right-bottom-content{
+    font-family: var(--main-text-font);
+    font-size: 12px;
+}
+.product-content-right-bottom-content-baoquan{
+    display: none;
+}
+.activeBtn{
+    display: none;
+}
+.activeInfBtn{
+    border-bottom: 2px solid #333;
+}
+/* ------------------Product-relate----------- */
+.product-related{
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+.product-related-title{
+    margin: 20px 0;
+}
+.product-related-title p{
+    font-family: var(--main-text-font);
+    font-size: 14px;
+    font-weight: bold;
+    counter-reset: #333;
+}
+.product-related-item{
+    width: 20%;
+    text-align: center;
+    padding: 0 6px;
+}
+.product-related-item img{
+    width: 100%;
+}
+.product-related-item h1{
+    font-family: var(--main-text-font);
+    font-size: 11px;
+    color: #333;
+    margin-top: 6px;
+}
+.product-related-item p{
+    font-size: 12px;
 }
