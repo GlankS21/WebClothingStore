@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!--------------------------------Header-------------------------------->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+        </div>
+        <div class="menu">
+            <li><a href="index.html">ЖЕНЩИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">МУЖЧИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">ДЕТИ</a></li>
+            <li><a href="">СКИДКА</a></li>
+            <li><a href="">КОЛЛЕКЦИЯ</a></li>
+            <li><a href="">ИНФОРМАЦИЯ</a></li>
+        </div>
+        <div class="others">
+            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="" ></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
+        </div>
+    </header>
+    <!--------------------------------Delivery---------------------------------->
+    <section id="delivery">
+        <div class="container">
+            <div class="delivery-top-wrap">
+                <div class="delivery-top">
+                    <div class="delivery-top-delivery delivery-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="delivery-top-address delivery-top-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="delivery-top-payment delivery-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="delivery-content" style="display: flex;">
+                <div class="delivery-content-left">
+                    <p>Пожалуйста, выберите адрес доставки</p>
+                    <div class="delivery-content-left-login row">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <p>Войдите (если у вас уже есть учетная запись)</p>
+                    </div>
+                    <div class="delivery-content-left-retail" style="display: flex;">
+                        <input checked name="loaikhach" type="radio">
+                        <p><span style="font-weight: bold;">Розничный покупатель</span> (Если вы не хотите сохранять информацию)</p>
+                    </div>
+                    <div class="delivery-content-left-regis" style="display: flex;">
+                        <input checked name="loaikhach" type="radio">
+                        <p><span style="font-weight: bold;">Зарегистрация</span> (Создайте новую учетную запись, используя информацию ниже)</p>
+                    </div>
+                    <div class="delivery-content-left-input-top row" >
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Имя <span style="color: red;"></span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Отчество <span style="color: red;"></span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Фамилия <span style="color: red;"></span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Номер телефона <span style="color: red;"></span></label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="delivery-content-left-input-bottom">
+                        <label for="">Адрес<span style="color: red;"></span></label>
+                        <input type="text">
+                    </div>
+                    <div class="delivery-content-left-button" style="display: flex;">
+                        <a href=""><span>&#171;</span><p>Вернуться в корзину</p></a>
+                        <a href="payment.html"><button class="text-uppercase">Оплата и доставка</button></a>
+                    </div>
+                </div>
+                <div class="delivery-content-right">
+                    <table>
+                        <tr>
+                            <th>Название</th>
+                            <th>Скидка</th>
+                            <th>Количество</th>
+                            <th>Сумма</th>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: 400;">Рубашка-поло в горизонтальную полоску MS 57E2940</th>
+                            <th style="font-weight: 400;">-30%</th>
+                            <th style="font-weight: 400;">1</th>
+                            <th style="font-weight: 400;">1000 <sup>rub</sup></th>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: 400;">Рубашка-поло в горизонтальную полоску MS 57E2940</th>
+                            <th style="font-weight: 400;">-30%</th>
+                            <th style="font-weight: 400;">1</th>
+                            <th style="font-weight: 400;">1000 <sup>rub</sup></th>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;" colspan="3">Итого</th>
+                            <th style="font-weight: bold;"><p>2000 <sup>rub</sup></p></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------Container----------------------------->
+    <section class="app-container">
+        <p>Скачать приложение</p>
+        <div class="app-google">
+            <img src="images/appstore.png" alt="">
+            <img src="images/googleplay.png" alt="">
+        </div>
+        <p>Получение сообщений</p>
+        <input type="text" placeholder="Вводите вашу электронную почту...">
+    </section>
+    <!--------------------------------Footer-------------------------------->
+    <footer>
+        <div class="footer-top">
+            <li><a href="">Хоанг Ван Куан</a></li>
+            <li><a href="">Р3366</a></li>
+            <li>
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-youtube"></a>
+            </li>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
