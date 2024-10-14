@@ -1,5 +1,7 @@
 :root{
     --main-text-font: 'Montserrat', sans-serif;
+    --while-color: rgb(254, 253, 252);
+    --back-color: #1f1f1f;
 }
 *{
     margin: 0;
@@ -15,7 +17,7 @@ li{
 
 a{
     text-decoration: none;
-    color: #000;
+    color: var(--back-color);
 }
 
 .space-between{
@@ -96,7 +98,7 @@ header:hover{
 }
 .sub-menu ul li:hover a{
     background: #ccc;
-    color: #000;
+    color: var(--back-color);
 }
 .others{
     flex: 1;
@@ -106,17 +108,6 @@ header:hover{
     padding: 0 12px;
     position: relative;
     line-height: 26px;
-}
-.others > li::after{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 1px;
-    height: 50%;
-    background: #333;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .others > li:first-child{
     position: relative;
@@ -158,48 +149,30 @@ header:hover{
     top: 0;
     left: 0;
 }
-.dot-container{
-    position: absolute;
-    height: 30px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.dot{
-    height: 16px;
-    width: 16px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-right: 12px;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #333;
-} 
 /* -------------------------Container------------------------- */
 .app-container{
     text-align: center;
     align-items: center;
     padding: 100px 0 50px 0;
-    border-top: 2px solid #ccc;
 }
 .app-container p{
     line-height: 20px;
     letter-spacing: 1px;
     font-size: 17px;
-    color: #000;
+    color: var(--back-color);
     font-weight: bold;
 }
 .app-container input{
     margin-top: 50px;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--back-color);
     padding-bottom: 12px;
     width: 400px;
     text-align: center;
     outline: none;
+}
+.app-container i{
+    right: 0;
 }
 .app-google{
     margin: 50px;
@@ -321,7 +294,7 @@ footer{
     padding-bottom: 18px;
 }
 .cartegory-left ul li > a{
-    color: #000;
+    color: var(--back-color);
     font-size: 16px;
     font-weight: bold;
 }
@@ -367,7 +340,7 @@ footer{
     width: 20%;
 }
 .product-content-left-small-img img{
-    width: 100%;
+    width: calc(100% - 7px);
     cursor: pointer;
 }
 .product-content-right{
@@ -426,12 +399,12 @@ footer{
     justify-content: space-evenly;
     align-items: center;
     background: #fff;
-    color: #000 !important;
-    border: 2px solid #000 !important;
+    color: var(--back-color) !important;
+    border: 2px solid var(--back-color) !important;
     cursor: pointer;
 }
 .product-content-right-product-button button:first-child:hover{
-    background-color: #000;
+    background-color: var(--back-color);
     color:#fff !important;
 }
 .product-content-right-product-button button:last-child{
@@ -582,9 +555,6 @@ footer{
     width: 100%;
     text-align: center;
 }
-.cart-content-left table tr td:last-child{
-    transform: translateX(calc(50% - 10px));
-}
 .cart-content-left table th{
     padding-bottom: 20px;
     font-family: var(--main-text-font);
@@ -602,11 +572,9 @@ footer{
     width: 40px;
     text-align: center;
 }
-.cart-content-left table span{
-    display: block;
+.cart-content-left table i{
     width: 20px;
     height: 20px;
-    border: 1px solid #ddd;
     text-align: center;
     cursor: pointer;
 }
@@ -671,20 +639,20 @@ footer{
 }
 .cart-content-right-button button:first-child{
     background-color: #fff;
-    border: 1px solid #000;
+    border: 1px solid var(--back-color);
     margin-right: 20px;
 }
 .cart-content-right-button button:first-child:hover{
     background-color: #ddd;
 }
 .cart-content-right-button button:last-child{
-    background-color: #000;
+    background-color: var(--back-color);
     color: #fff;
     border: none;
 }
 .cart-content-right-button button:last-child:hover{
     background-color: #ddd;
-    color: #000;
+    color: var(--back-color);
 }
 .cart-content-right-login{
     margin-top: 20px;
@@ -802,13 +770,13 @@ footer{
 }
 .delivery-content-left-button button{
     height: 35px;
-    border: 2px solid #000;
+    border: 2px solid var(--back-color);
     padding: 6px 12px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .delivery-content-left-button button:hover{
-    background-color: #000;
+    background-color: var(--back-color);
     color: #fff;
 }
 .delivery-content-right{
@@ -824,6 +792,7 @@ footer{
     text-align: center;
 }
 .delivery-content-right table tr th:first-child{
+    max-width: 250px;
     text-align: left;
 }
 .delivery-content-right table tr th{
@@ -917,7 +886,7 @@ footer{
 .payment-content-right-button button{
     height: 30px;
     width: 100px;
-    background-color: #000;
+    background-color: var(--back-color);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -940,12 +909,198 @@ footer{
     height: 35px;
     padding: 0 12px;
     font-size: 14px;
-    color: #000;
+    color: var(--back-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid #000;
+    border: 2px solid var(--back-color);
 }
 .payment-content-right-payment button:hover{
-    background-color: #000;
+    background-color: var(--back-color);
     color: #fff;
+}
+/* ----------------------------------Information-About---------------------------------- */
+#about{
+    padding: 120px 5% 50px 5%;
+}
+.about-title{
+    margin-bottom: 50px;
+}
+.about-content{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ----------------------------------Information-Contacts---------------------------------- */
+#contacts{
+    padding: 120px 5% 50px 5%;
+}
+.contacts-title{
+    margin-bottom: 50px;
+}
+.contacts-content{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contacts-content-item p{
+    height: 27px;
+    line-height: 24px;
+}
+/* ----------------------------------Login---------------------------------- */
+#login{
+    padding: 120px 5% 50px 5%;
+}
+.login-container-left{
+    flex: 1;
+    padding: 0 10%;
+    text-align: center;
+}
+.login-container-left h1{
+    font-size: 20px;
+}
+.login-container-left p{
+    font-size: 14px;
+    line-height: 24px;
+}
+.login-container-left form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-container-left input{
+    height: 48px;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+.login-container-left-remember{
+    display: flex;
+    font-size: 14px;
+    margin-top: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-container-left-remember input{
+    width: 18px;
+    height: 18px;   
+}
+.login-container-left button{
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-family: var(--main-text-font);
+    background-color: var(--back-color);
+    color: var(--while-color);
+    transition: all 0.3s ease;
+}
+.login-container-left button:hover{
+    background-color: var(--while-color);
+    color: var(--black-color);
+}
+.login-container-right{
+    flex: 1;
+    border-left: 2px solid #ddd;
+    padding: 0 10%;
+    text-align: center;
+}
+.login-container-right h1{
+    font-size: 20px;
+}
+.login-container-right p{
+    font-size: 14px;
+    line-height: 24px;
+}
+.login-container-right button{
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-family: var(--main-text-font);
+    background-color: var(--back-color);
+    color: var(--while-color);
+    transition: all 0.3s ease;
+}
+.login-container-right button:hover{
+    background-color: var(--while-color);
+    color: var(--black-color);
+}
+/* ----------------------------------Registation---------------------------------- */
+#regis{
+    padding: 120px 5% 50px 5%;
+}
+.regis-content-left{
+    flex: 1;
+    width: 100%;
+}
+.regis-content-left-title{
+    margin-bottom: 10px;
+    font-family: var(--main-text-font);
+    padding-left: 15px;
+}
+.regis-content-left-form{
+    padding:0 15px;
+    margin-bottom: 1rem;
+    width: calc(50% - 15px);
+}
+.regis-content-left-form input, select, textarea{
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #E7E8E9;
+    height: 48px;
+    line-height: 16px;
+}
+.regis-content-left-form textarea{
+    height: 80px;
+    width: calc(200% + 30px);
+    resize: none;
+}
+.regis-content-right{
+    flex: 1;
+    width: 100%;
+}
+.regis-content-right-title{
+    margin-bottom: 10px;
+    font-family: var(--main-text-font);
+    padding-left: 15px;
+}
+.regis-content-right-form{
+    padding:0 15px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.regis-content-right-form input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #E7E8E9;
+    height: 48px;
+    line-height: 16px;
+}
+.form-check-input{
+    width: 1em !important;
+    height: 1em !important;
+    border: 1px solid #faf9f9;
+    border-radius: 0.25em;
+    margin-top: 0.25em;
+    text-align: right;
+}
+.regis-content-right-button{
+    width: 100%;
+    margin-top: 15px;
+}
+.regis-content-right-button button{
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: var(--while-color);
+    background-color: var(--back-color);
+    transition: all 0.3s ease;
+}
+.regis-content-right-button button:hover{
+    color: var(--back-color);
+    background-color: var(--white-color);
 }

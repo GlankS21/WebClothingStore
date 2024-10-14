@@ -75,79 +75,81 @@
             <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
         </div>
     </header>
-    <!--------------------------------Delivery---------------------------------->
-    <section id="payment">
-        <div class="container">
-            <div class="payment-top-wrap">
-                <div class="payment-top">
-                    <div class="payment-top-delivery payment-top-item">
-                        <i class="fas fa-shopping-cart"></i>
+    <!--------------------------------Registation---------------------------------->
+    <section id="regis">
+       <div class="regis-content row">
+           <div class="regis-content-left">
+                <div class="regis-content-left-title"><h4>Thông tin khách hàng</h4></div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Họ:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Họ..." style="width: 100%">
                     </div>
-                    <div class="payment-top-address payment-top-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="payment-top-payment payment-top-item">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="payment-content row">
-                <div class="payment-content-left">
-                    <div class="payment-content-left-method-delivery">
-                        <p style="font-weight: bold;">Способ доставки</p>
-                        <div class="payment-content-left-method-delivery-item">
-                            <input type="radio">
-                            <label for="">Экспресс-доставка</label>
-                        </div>
-                        <p style="font-weight: bold;">Способ оплаты</p>
-                        <p style="padding-top: 6px;">Каждая транзакция безопасна и зашифрована. Информация о кредитной карте никогда не будет сохранена.</p>
-                        <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Оплата кредитной картой (OnePay)</label>
-                        </div>   
-                        <div class="payment-content-left-method-payment-item-img">
-                            <img src="./images/visa.png" alt="">
-                        </div>
-                        <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Оплата банковской картой (OnePay)</label>
-                        </div>   
-                        <div class="payment-content-left-method-payment-item-img">
-                            <img src="./images/mastercard.png" alt="">
-                        </div>
-                        <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Наличными</label>
-                        </div> 
+                    <div class="regis-content-left-form">
+                        <label>Tên:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Tên..." style="width: 100%">
                     </div>
                 </div>
-                <div class="payment-content-right">
-                    <div class="payment-content-right-button">
-                        <input type="text" placeholder="Код скидки/подарок">
-                        <button><i class="fas fa-check"></i></button>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Email:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Email..." style="width: 100%">
                     </div>
-                    <div class="payment-content-right-button">
-                        <input type="text" placeholder="Код соавтора">
-                        <button><i class="fas fa-check"></i></button>
+                    <div class="regis-content-left-form">
+                        <label>Số điện thoại:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Số điện thoại..." style="width: 100%">
                     </div>
-                    <div class="payment-content-right-mnv">
-                        <select name="" id="">
-                            <option value="">Выберите код лояльности сотрудника</option>
-                            <option value="">D345</option>
-                            <option value="">A345</option>
-                            <option value="">E345</option>
-                            <option value="">I345</option>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Ngày sinh:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Ngày sinh..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Giới tính:<span style="color: red">*</span></label>
+                        <select name="customer_sex" style="width: 100%" class="form-control">
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                            <option value="2">Khác</option>
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="payment-content-right-payment">
-                <button class="text-uppercase">Продолжить оплату</button>
-            </div>
-        </div>
-        
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Địa chỉ:<span style="color: red">*</span></label>
+                        <textarea class="form-control" name="address"></textarea>
+                    </div>
+                </div>
+           </div>
+           <div class="regis-content-right">
+                <div class="regis-content-right-title"><h4>Thông tin mật khẩu</h4></div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Nhập lại mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Nhập lại mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <input class="form-check-input checkboxs" type="checkbox" name="customer_agree" value="1" id="defaultCheck1">
+                        <label style="margin-top: 4px;margin-left: 3px;" class="form-check-label" for="defaultCheck1">
+                            <span> Đồng ý với các <a style="color: #f31f1f" href="">điều khoản</a> của IVY </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-button">
+                        <button id="bnt_register" class="btn btn--large" type="submit" style="width: 100%;margin-top: 15px">Đăng ký</button>
+                    </div>
+                </div>
+           </div>
+       </div>
     </section>
     <!--------------------------------Container----------------------------->
     <section class="app-container">
