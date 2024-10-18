@@ -72,92 +72,84 @@
         <div class="others">
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.html" ></a></li>
-            <li><a class="fa fa-shopping-bag" href=""></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
         </div>
     </header>
-    <!--------------------------------Cart---------------------------------->
-    <section id="cart">
-        <div class="container">
-            <div class="cart-top-wrap">
-                <div class="cart-top">
-                    <div class="cart-top-cart cart-top-item">
-                        <i class="fas fa-shopping-cart"></i>
+    <!--------------------------------Registation---------------------------------->
+    <section id="regis">
+       <div class="regis-content row">
+           <div class="regis-content-left">
+                <div class="regis-content-left-title"><h4>Thông tin khách hàng</h4></div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Họ:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Họ..." style="width: 100%">
                     </div>
-                    <div class="cart-top-address cart-top-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="cart-top-payment cart-top-item">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="cart-content" style="display: flex;">
-                <div class="cart-content-left">
-                    <table>
-                        <tr>
-                            <th>Продукт</th>
-                            <th>Название продукта</th>
-                            <th>Свет</th>
-                            <th>Размер</th>
-                            <th>Количество</th>
-                            <th>Цена</th>
-                            <th>Удалить</th>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td><p>Little Tweed Jacket</p></td>
-                            <td><img src="./images/color004.png" alt=""></td>
-                            <td><p>L</p></td>
-                            <td><input type="number" value="1" min="1"></td>
-                            <td><p>1000 <sub>rub</sub></p></td>
-                            <td><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td><p>Little Tweed Jacket</p></td>
-                            <td><img src="./images/color004.png" alt=""></td>
-                            <td><p>L</p></td>
-                            <td><input type="number" value="1" min="1"></td>
-                            <td><p>1000 <sub>rub</sub></p></td>
-                            <td><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="cart-content-right">
-                    <table>
-                        <tr>
-                            <th class="text-uppercase" colspan="2">Сумма</th>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Количество товара</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Общая сумма</td>
-                            <td><p>2000 <sub>rub</sub></p></td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Итого</td>
-                            <td><p style="color: #000; font-weight: bold;">2000 <sub>rub</sub></p></td>
-                        </tr>
-                    </table>
-                    <div class="cart-content-right-text">
-                        <p>Вы получите бесплатную доставку при общей стоимости заказа более 2500 рублей.</p>
-                        <p style="color: red; font-weight: bold;">Купить больше <span style="font-size: 18px;">500 rub</span></p>
-                    </div>
-                    <div class="cart-content-right-button">
-                        <button class="text-uppercase"><a href="cartegory.html">Продолжить покупку</a></button>
-                        <a href="delivery.html"><button class="text-uppercase">Платить</button></a>
-                    </div>
-                    <div class="cart-content-right-login">
-                        <p class="text-uppercase">Аккаунт</p><br>
-                        <p><a href="">Войдите </a>в свой аккаунт, чтобы заработать членские баллы</p>
+                    <div class="regis-content-left-form">
+                        <label>Tên:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Tên..." style="width: 100%">
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Email:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Email..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Số điện thoại:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Số điện thoại..." style="width: 100%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Ngày sinh:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Ngày sinh..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Giới tính:<span style="color: red">*</span></label>
+                        <select name="customer_sex" style="width: 100%" class="form-control">
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                            <option value="2">Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Địa chỉ:<span style="color: red">*</span></label>
+                        <textarea class="form-control" name="address"></textarea>
+                    </div>
+                </div>
+           </div>
+           <div class="regis-content-right">
+                <div class="regis-content-right-title"><h4>Thông tin mật khẩu</h4></div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Nhập lại mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Nhập lại mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <input class="form-check-input checkboxs" type="checkbox" name="customer_agree" value="1" id="defaultCheck1">
+                        <label style="margin-top: 4px;margin-left: 3px;" class="form-check-label" for="defaultCheck1">
+                            <span> Đồng ý với các <a style="color: #f31f1f" href="">điều khoản</a> của IVY </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-button">
+                        <button id="bnt_register" class="btn btn--large" type="submit" style="width: 100%;margin-top: 15px">Đăng ký</button>
+                    </div>
+                </div>
+           </div>
+       </div>
     </section>
     <!--------------------------------Container----------------------------->
     <section class="app-container">

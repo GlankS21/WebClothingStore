@@ -72,92 +72,34 @@
         <div class="others">
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.html" ></a></li>
-            <li><a class="fa fa-shopping-bag" href=""></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
         </div>
     </header>
-    <!--------------------------------Cart---------------------------------->
-    <section id="cart">
-        <div class="container">
-            <div class="cart-top-wrap">
-                <div class="cart-top">
-                    <div class="cart-top-cart cart-top-item">
-                        <i class="fas fa-shopping-cart"></i>
+    <!--------------------------------Login---------------------------------->
+    <section id="login">
+       <div class="container row">
+            <div class="login-container-left">
+                <h1>Bạn đã có tài khoản IVY</h1> <br>
+                <p>Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</p><br>
+                <form id="login-form" action="">
+                    <input type="text" class="login-email" placeholder="Email">
+                    <input type="text" class="login-email" placeholder="Password">
+                    <div class="login-container-left-remember">
+                        <label>
+                            <input class="checkboxs" value="1" name="customer_remember" type="checkbox">
+                            <span style="margin-left: 5px;"> Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a style=" text-align: right; text-decoration: underline;" class="auth__form__link" href="registation.html">Quên mật khẩu? </a>
                     </div>
-                    <div class="cart-top-address cart-top-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="cart-top-payment cart-top-item">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                </div>
+                    <br><button class="text-uppercase">Login</button>
+                </form>
             </div>
-        </div>
-        <div class="container">
-            <div class="cart-content" style="display: flex;">
-                <div class="cart-content-left">
-                    <table>
-                        <tr>
-                            <th>Продукт</th>
-                            <th>Название продукта</th>
-                            <th>Свет</th>
-                            <th>Размер</th>
-                            <th>Количество</th>
-                            <th>Цена</th>
-                            <th>Удалить</th>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td><p>Little Tweed Jacket</p></td>
-                            <td><img src="./images/color004.png" alt=""></td>
-                            <td><p>L</p></td>
-                            <td><input type="number" value="1" min="1"></td>
-                            <td><p>1000 <sub>rub</sub></p></td>
-                            <td><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td><p>Little Tweed Jacket</p></td>
-                            <td><img src="./images/color004.png" alt=""></td>
-                            <td><p>L</p></td>
-                            <td><input type="number" value="1" min="1"></td>
-                            <td><p>1000 <sub>rub</sub></p></td>
-                            <td><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="cart-content-right">
-                    <table>
-                        <tr>
-                            <th class="text-uppercase" colspan="2">Сумма</th>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Количество товара</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Общая сумма</td>
-                            <td><p>2000 <sub>rub</sub></p></td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Итого</td>
-                            <td><p style="color: #000; font-weight: bold;">2000 <sub>rub</sub></p></td>
-                        </tr>
-                    </table>
-                    <div class="cart-content-right-text">
-                        <p>Вы получите бесплатную доставку при общей стоимости заказа более 2500 рублей.</p>
-                        <p style="color: red; font-weight: bold;">Купить больше <span style="font-size: 18px;">500 rub</span></p>
-                    </div>
-                    <div class="cart-content-right-button">
-                        <button class="text-uppercase"><a href="cartegory.html">Продолжить покупку</a></button>
-                        <a href="delivery.html"><button class="text-uppercase">Платить</button></a>
-                    </div>
-                    <div class="cart-content-right-login">
-                        <p class="text-uppercase">Аккаунт</p><br>
-                        <p><a href="">Войдите </a>в свой аккаунт, чтобы заработать членские баллы</p>
-                    </div>
-                </div>
+            <div class="login-container-right">
+                <h1>Khách hàng mới của IVY moda</h1><br>
+                <p>Nếu bạn chưa có tài khoản trên ivymoda.com, hãy sử dụng tùy chọn này để truy cập biểu mẫu đăng ký. Bằng cách cung cấp cho IVY moda thông tin chi tiết của bạn, quá trình mua hàng trên ivymoda.com sẽ là một trải nghiệm thú vị và nhanh chóng hơn!</p> <br>
+                <a href="registation.html"><button class="text-uppercase">Registration</button></a>
             </div>
-        </div>
+       </div>
     </section>
     <!--------------------------------Container----------------------------->
     <section class="app-container">

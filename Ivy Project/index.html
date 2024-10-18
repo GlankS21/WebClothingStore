@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Shop-Project</title>
 </head>
 <body>
@@ -62,12 +62,17 @@
             <li><a href="cartegory.html">ДЕТИ</a></li>
             <li><a href="cartegory.html">СКИДКА</a></li>
             <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
-            <li><a href="cartegory.html">ИНФОРМАЦИЯ</a></li>
+            <li><a href="cartegory.html">ИНФОРМАЦИЯ</a>
+                <ul class="sub-menu">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </li>
         </div>
         <div class="others">
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="" ></a></li>
-            <li><a class="fa fa-shopping-bag" href="delivery.html"></a></li>
+            <li><a class="fa fa-user" href="login.html" ></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
         </div>
     </header>
     <!--------------------------------Slider-------------------------------->
@@ -95,7 +100,7 @@
             <img src="images/googleplay.png" alt="">
         </div>
         <p>Получение сообщений</p>
-        <input type="text" placeholder="Вводите вашу электронную почту...">
+        <input type="text" placeholder="Вводите вашу электронную почту..."><i class="fa-solid fa-arrow-left"></i>
     </section>
     <!--------------------------------Footer-------------------------------->
     <footer>
@@ -110,5 +115,5 @@
         </div>
     </footer>
 </body>
-<script src="script.js"></script>
+<script src="./js/script.js"></script>
 </html>
