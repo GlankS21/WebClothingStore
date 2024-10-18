@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!--------------------------------Header-------------------------------->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+        </div>
+        <div class="menu">
+            <li><a href="index.html">ЖЕНЩИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">МУЖЧИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">ДЕТИ</a></li>
+            <li><a href="">СКИДКА</a></li>
+            <li><a href="">КОЛЛЕКЦИЯ</a></li>
+            <li><a href="cartegory.html">ИНФОРМАЦИЯ</a>
+                <ul class="sub-menu">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="others">
+            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" ></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
+        </div>
+    </header>
+    <!--------------------------------Delivery---------------------------------->
+    <section id="payment">
+        <div class="container">
+            <div class="payment-top-wrap">
+                <div class="payment-top">
+                    <div class="payment-top-delivery payment-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="payment-top-address payment-top-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="payment-top-payment payment-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="payment-content row">
+                <div class="payment-content-left">
+                    <div class="payment-content-left-method-delivery">
+                        <p style="font-weight: bold;">Способ доставки</p>
+                        <div class="payment-content-left-method-delivery-item">
+                            <input type="radio">
+                            <label for="">Экспресс-доставка</label>
+                        </div>
+                        <p style="font-weight: bold;">Способ оплаты</p>
+                        <p style="padding-top: 6px;">Каждая транзакция безопасна и зашифрована. Информация о кредитной карте никогда не будет сохранена.</p>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Оплата кредитной картой (OnePay)</label>
+                        </div>   
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="./images/visa.png" alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Оплата банковской картой (OnePay)</label>
+                        </div>   
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="./images/mastercard.png" alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Наличными</label>
+                        </div> 
+                    </div>
+                </div>
+                <div class="payment-content-right">
+                    <div class="payment-content-right-button">
+                        <input type="text" placeholder="Код скидки/подарок">
+                        <button><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="payment-content-right-button">
+                        <input type="text" placeholder="Код соавтора">
+                        <button><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="payment-content-right-mnv">
+                        <select name="" id="">
+                            <option value="">Выберите код лояльности сотрудника</option>
+                            <option value="">D345</option>
+                            <option value="">A345</option>
+                            <option value="">E345</option>
+                            <option value="">I345</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-content-right-payment">
+                <button class="text-uppercase">Продолжить оплату</button>
+            </div>
+        </div>
+        
+    </section>
+    <!--------------------------------Container----------------------------->
+    <section class="app-container">
+        <p>Скачать приложение</p>
+        <div class="app-google">
+            <img src="images/appstore.png" alt="">
+            <img src="images/googleplay.png" alt="">
+        </div>
+        <p>Получение сообщений</p>
+        <input type="text" placeholder="Вводите вашу электронную почту...">
+    </section>
+    <!--------------------------------Footer-------------------------------->
+    <footer>
+        <div class="footer-top">
+            <li><a href="">Хоанг Ван Куан</a></li>
+            <li><a href="">Р3366</a></li>
+            <li>
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-youtube"></a>
+            </li>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

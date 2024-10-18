@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!--------------------------------Header-------------------------------->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+        </div>
+        <div class="menu">
+            <li><a href="index.html">ЖЕНЩИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">МУЖЧИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">ДЕТИ</a></li>
+            <li><a href="">СКИДКА</a></li>
+            <li><a href="">КОЛЛЕКЦИЯ</a></li>
+            <li><a href="cartegory.html">ИНФОРМАЦИЯ</a>
+                <ul class="sub-menu">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="others">
+            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" ></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
+        </div>
+    </header>
+    <!--------------------------------Registation---------------------------------->
+    <section id="regis">
+       <div class="regis-content row">
+           <div class="regis-content-left">
+                <div class="regis-content-left-title"><h4>Thông tin khách hàng</h4></div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Họ:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Họ..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Tên:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Tên..." style="width: 100%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Email:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Email..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Số điện thoại:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Số điện thoại..." style="width: 100%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Ngày sinh:<span style="color: red">*</span></label>
+                        <input type="text" class="form-control" value="" name="customer_firstname" placeholder="Ngày sinh..." style="width: 100%">
+                    </div>
+                    <div class="regis-content-left-form">
+                        <label>Giới tính:<span style="color: red">*</span></label>
+                        <select name="customer_sex" style="width: 100%" class="form-control">
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                            <option value="2">Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-left-form">
+                        <label>Địa chỉ:<span style="color: red">*</span></label>
+                        <textarea class="form-control" name="address"></textarea>
+                    </div>
+                </div>
+           </div>
+           <div class="regis-content-right">
+                <div class="regis-content-right-title"><h4>Thông tin mật khẩu</h4></div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <label>Nhập lại mật khẩu:<span style="color: red">*</span></label>
+                        <input class="form-control" type="password" value="" name="customer_pass1" placeholder="Nhập lại mật khẩu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-form">
+                        <input class="form-check-input checkboxs" type="checkbox" name="customer_agree" value="1" id="defaultCheck1">
+                        <label style="margin-top: 4px;margin-left: 3px;" class="form-check-label" for="defaultCheck1">
+                            <span> Đồng ý với các <a style="color: #f31f1f" href="">điều khoản</a> của IVY </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="regis-content-right-button">
+                        <button id="bnt_register" class="btn btn--large" type="submit" style="width: 100%;margin-top: 15px">Đăng ký</button>
+                    </div>
+                </div>
+           </div>
+       </div>
+    </section>
+    <!--------------------------------Container----------------------------->
+    <section class="app-container">
+        <p>Скачать приложение</p>
+        <div class="app-google">
+            <img src="images/appstore.png" alt="">
+            <img src="images/googleplay.png" alt="">
+        </div>
+        <p>Получение сообщений</p>
+        <input type="text" placeholder="Вводите вашу электронную почту...">
+    </section>
+    <!--------------------------------Footer-------------------------------->
+    <footer>
+        <div class="footer-top">
+            <li><a href="">Хоанг Ван Куан</a></li>
+            <li><a href="">Р3366</a></li>
+            <li>
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-youtube"></a>
+            </li>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

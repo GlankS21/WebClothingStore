@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!--------------------------------Header-------------------------------->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+        </div>
+        <div class="menu">
+            <li><a href="index.html">ЖЕНЩИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">МУЖЧИНА</a>
+                <ul class="sub-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li><a href="">Коллекция</a></li>
+                    <li><a href="">Верхняя одежда</a>
+                        <ul>
+                            <li><a href="">Блузы и рабашки</a></li>
+                            <li><a href="">Дубленки и шубы</a></li>
+                            <li><a href="">Жилеты утепленные</a></li>
+                            <li><a href="">Комплекты верхней</a></li>
+                            <li><a href="">Куртки и пуховики</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Джинсы</a>
+                        <ul>
+                            <li><a href="">Джеггинсы</a></li>
+                            <li><a href="">Домашняя одежда</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">ДЕТИ</a></li>
+            <li><a href="">СКИДКА</a></li>
+            <li><a href="">КОЛЛЕКЦИЯ</a></li>
+            <li><a href="cartegory.html">ИНФОРМАЦИЯ</a>
+                <ul class="sub-menu">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="others">
+            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" ></a></li>
+            <li><a class="fa fa-shopping-bag" href=""></a></li>
+        </div>
+    </header>
+    <!--------------------------------Cart---------------------------------->
+    <section id="cart">
+        <div class="container">
+            <div class="cart-top-wrap">
+                <div class="cart-top">
+                    <div class="cart-top-cart cart-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="cart-top-address cart-top-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="cart-top-payment cart-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="cart-content" style="display: flex;">
+                <div class="cart-content-left">
+                    <table>
+                        <tr>
+                            <th>Продукт</th>
+                            <th>Название продукта</th>
+                            <th>Свет</th>
+                            <th>Размер</th>
+                            <th>Количество</th>
+                            <th>Цена</th>
+                            <th>Удалить</th>
+                        </tr>
+                        <tr>
+                            <td><img src="./images/sp1.webp" alt=""></td>
+                            <td><p>Little Tweed Jacket</p></td>
+                            <td><img src="./images/color004.png" alt=""></td>
+                            <td><p>L</p></td>
+                            <td><input type="number" value="1" min="1"></td>
+                            <td><p>1000 <sub>rub</sub></p></td>
+                            <td><i class="fa-solid fa-trash-can"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="./images/sp1.webp" alt=""></td>
+                            <td><p>Little Tweed Jacket</p></td>
+                            <td><img src="./images/color004.png" alt=""></td>
+                            <td><p>L</p></td>
+                            <td><input type="number" value="1" min="1"></td>
+                            <td><p>1000 <sub>rub</sub></p></td>
+                            <td><i class="fa-solid fa-trash-can"></i></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cart-content-right">
+                    <table>
+                        <tr>
+                            <th class="text-uppercase" colspan="2">Сумма</th>
+                        </tr>
+                        <tr>
+                            <td class="text-uppercase">Количество товара</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td class="text-uppercase">Общая сумма</td>
+                            <td><p>2000 <sub>rub</sub></p></td>
+                        </tr>
+                        <tr>
+                            <td class="text-uppercase">Итого</td>
+                            <td><p style="color: #000; font-weight: bold;">2000 <sub>rub</sub></p></td>
+                        </tr>
+                    </table>
+                    <div class="cart-content-right-text">
+                        <p>Вы получите бесплатную доставку при общей стоимости заказа более 2500 рублей.</p>
+                        <p style="color: red; font-weight: bold;">Купить больше <span style="font-size: 18px;">500 rub</span></p>
+                    </div>
+                    <div class="cart-content-right-button">
+                        <button class="text-uppercase"><a href="cartegory.html">Продолжить покупку</a></button>
+                        <a href="delivery.html"><button class="text-uppercase">Платить</button></a>
+                    </div>
+                    <div class="cart-content-right-login">
+                        <p class="text-uppercase">Аккаунт</p><br>
+                        <p><a href="">Войдите </a>в свой аккаунт, чтобы заработать членские баллы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------Container----------------------------->
+    <section class="app-container">
+        <p>Скачать приложение</p>
+        <div class="app-google">
+            <img src="images/appstore.png" alt="">
+            <img src="images/googleplay.png" alt="">
+        </div>
+        <p>Получение сообщений</p>
+        <input type="text" placeholder="Вводите вашу электронную почту...">
+    </section>
+    <!--------------------------------Footer-------------------------------->
+    <footer>
+        <div class="footer-top">
+            <li><a href="">Хоанг Ван Куан</a></li>
+            <li><a href="">Р3366</a></li>
+            <li>
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-youtube"></a>
+            </li>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
