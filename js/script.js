@@ -82,3 +82,27 @@ if (btn && bigContent) {
         bigContent.classList.toggle("activeBtn");
     });
 }
+
+// -------------
+const about = document.querySelector(".about");
+const contacts = document.querySelector(".contacts");
+const aboutContent = document.querySelector(".about-content-about");
+const contactsContent = document.querySelector(".about-content-contacts");
+function switchTab(showElement, hideElement, activeButton, inactiveButton) {
+    if (showElement && hideElement) {
+        showElement.style.display = "block";
+        hideElement.style.display = "none";
+    }
+    if (activeButton && inactiveButton) {
+        activeButton.classList.add("active_InfBtn");
+        inactiveButton.classList.remove("active_InfBtn");
+    }
+}
+if (about && contacts) {
+    about.addEventListener("click", function() {
+        switchTab(aboutContent, contactsContent, about, contacts);
+    });
+    contacts.addEventListener("click", function() {
+        switchTab(contactsContent, aboutContent, contacts, about);
+    });
+}
