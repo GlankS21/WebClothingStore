@@ -918,14 +918,11 @@ footer{
     background-color: var(--back-color);
     color: #fff;
 }
-/* ----------------------------------Information-About---------------------------------- */
-#about{
+/* ----------------------------------Information---------------------------------- */
+#information{
     padding: 120px 5% 50px 5%;
 }
-.about-title{
-    margin-bottom: 50px;
-}
-.about-content{
+.about-content, .contacts-content{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -939,9 +936,11 @@ footer{
     font-size: 16px;
     border: none; 
     padding: .375rem 1rem;
+    margin: 2rem 0;
     line-height: 1rem;
     border-radius: 1.5rem; 
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .active_InfBtn button{
     color: var(--while-color); 
@@ -995,6 +994,7 @@ footer{
     background-color: var(--back-color);
     color: var(--while-color);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .login-container-left button:hover{
     background-color: var(--while-color);
@@ -1021,6 +1021,7 @@ footer{
     background-color: var(--back-color);
     color: var(--while-color);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .login-container-right button:hover{
     background-color: var(--while-color);

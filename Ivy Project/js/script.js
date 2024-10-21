@@ -86,9 +86,15 @@ if (btn && bigContent) {
 // -------------
 const about = document.querySelector(".about");
 const contacts = document.querySelector(".contacts");
-const aboutContent = document.querySelector(".about-content-about");
-const contactsContent = document.querySelector(".about-content-contacts");
-function switchTab(showElement, hideElement, activeButton, inactiveButton) {
+const aboutContentTitle = document.querySelector(".information-content-about-title");
+const contactsContentTitle = document.querySelector(".information-content-contacts-title");
+const aboutContent = document.querySelector(".information-content-about");
+const contactsContent = document.querySelector(".information-content-contacts");
+function switchTab_About(showElementTitle, hideElementTitle, showElement, hideElement, activeButton, inactiveButton) {
+    if (showElementTitle && hideElementTitle) {
+        showElementTitle.style.display = "block";
+        hideElementTitle.style.display = "none";
+    }
     if (showElement && hideElement) {
         showElement.style.display = "block";
         hideElement.style.display = "none";
@@ -99,10 +105,10 @@ function switchTab(showElement, hideElement, activeButton, inactiveButton) {
     }
 }
 if (about && contacts) {
-    about.addEventListener("click", function() {
-        switchTab(aboutContent, contactsContent, about, contacts);
+    about.addEventListener("click", () => {
+        switchTab_About(aboutContentTitle, contactsContentTitle, aboutContent, contactsContent, about, contacts);
     });
-    contacts.addEventListener("click", function() {
-        switchTab(contactsContent, aboutContent, contacts, about);
+    contacts.addEventListener("click", () => {
+        switchTab_About(contactsContentTitle, aboutContentTitle, contactsContent, aboutContent, contacts, about);
     });
 }
