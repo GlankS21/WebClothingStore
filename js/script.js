@@ -112,3 +112,12 @@ if (about && contacts) {
         switchTab_About(contactsContentTitle, aboutContentTitle, contactsContent, aboutContent, contacts, about);
     });
 }
+// ----------------
+const mobileMenu = document.querySelector('.mobile-menu');
+const subMobileMenu = document.querySelector('.sub-mobile-menu');
+mobileMenu.addEventListener('click', function() {
+    this.classList.toggle('active');
+    if (this.classList.contains('active')) { subMobileMenu.style.display = 'block';
+    } else { subMobileMenu.style.display = 'none';
+    }
+});
