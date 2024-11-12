@@ -30,8 +30,8 @@ $brand = new brand;
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <div class="menu">
+        </div>
+        <div class="menu">
                 <?php
                 if ($show_cartegory) {
                     foreach ($show_cartegory as $result) {
