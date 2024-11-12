@@ -1,9 +1,13 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/config.php";
+?>
+<?php
 class Database {
     public $host = DB_HOST;
     public $user = DB_USER;
-    public $pass = DB_PASS;
+    public $pass = DB_PASSWORD;
     public $dbname = DB_NAME;
+
     public $link;
     public $error;
 
@@ -24,9 +28,16 @@ class Database {
 
     // Select or Read data
     public function select($query) {
-        $result = $this->link->query($query) or die($this->link->error . __LINE__);
-        if ($result->num_rows > 0) return $result;
-        else return false;
+        $result = $this->link->query($query);
+        if ($result === false) {
+            echo "Warning: " . $this->link->error;
+            return false;
+        }
+        if ($result->num_rows>0) {
+            return $result;
+        } else {
+            return false; 
+        }
     }
 
     // Insert data

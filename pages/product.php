@@ -1,10 +1,21 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/cartegory_class.php";
+?>
+
+<?php
+$cartegory = new cartegory;
+$show_cartegory = $cartegory -> show_cartegory();
+$brand = new brand;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?php echo '/shop/css/style.css'; ?>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -12,52 +23,90 @@
     <!--------------------------------Header-------------------------------->
     <header>
         <div class="logo">
-            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+            <a href="index.php"><img style="width: 6em;" src="../images/logo.png"></a>
         </div>
-        <div class="menu">
-            <li><a href="cartegory.html">ЖЕНЩИНА</a>
-                <ul class="sub-menu">
-                    <li><a href="">Новинки</a></li>
-                    <li><a href="">Коллекция</a></li>
-                    <li><a href="">Верхняя одежда</a></li>
-                    <li><a href="">Джинсы</a></li>
-                </ul>
-            </li>
-            <li><a href="">МУЖЧИНА</a>
-                <ul class="sub-menu">
-                    <li><a href="">Новинки</a></li>
-                    <li><a href="">Коллекция</a></li>
-                    <li><a href="">Верхняя одежда</a></li>
-                    <li><a href="">Джинсы</a></li>
-                </ul>
-            </li>
-            <li><a href="">ДЕТИ</a></li>
-            <li><a href="">КОЛЛЕКЦИЯ</a></li>
-            <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+        <div class="menu-main">
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu">
+                <?php
+                if ($show_cartegory) {
+                    foreach ($show_cartegory as $result) {
+                        $cartegory_id = $result['cartegory_id'];     
+                        $cartegory_name = $result['cartegory_name']; 
+                        if (strtolower($cartegory_name) == "информация") 
+                            echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                        else
+                            echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
+                        $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                        if ($result_brand && $result_brand->num_rows > 0) {
+                            echo "<ul class='sub-menu'>";
+                            while ($brand_row = $result_brand->fetch_assoc()) { 
+                                $brand_name = $brand_row['brand_name'];
+                                echo "<li><a href='#'>$brand_name</a></li>";
+                            }
+                            echo "</ul>";
+                        }
+                        echo "</li>";
+                    }
+                }
+                ?>
+            </div>
+            <!-- Mobile Menu -->
+            <div class = "sub-mobile-menu">
+                <div class="menu-mb">
+                    <?php
+                    if ($show_cartegory) {
+                        foreach ($show_cartegory as $result) {
+                            $cartegory_id = $result['cartegory_id'];     
+                            $cartegory_name = $result['cartegory_name']; 
+                            if (strtolower($cartegory_name) == "информация") 
+                                echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                            else
+                                echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
+                            $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                            if ($result_brand && $result_brand->num_rows > 0) {
+                                echo "<ul class='sub-menu-mb'>";
+                                while ($brand_row = $result_brand->fetch_assoc()) { 
+                                    $brand_name = $brand_row['brand_name'];
+                                    echo "<li><a href='#'>$brand_name</a></li>";
+                                }
+                                echo "</ul>";
+                            }
+                            echo "</li>";
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
         <div class="others">
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.html" ></a></li>
-            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
+            <li><a class="fa fa-user" href="login.php" ></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
         </div>
+        
     </header>
     <!--------------------------------Product---------------------------------->
     <section class = "product">
         <div class="container">
             <div class="product-top row">
-                <a href="index.html"><p>Menu</p></a><span>&#8594;</span><a href="cartegory.html"><p>ЖЕНЩИНА</p></a><span>&#8594;</span><p>Новинки</p><span>&#8594;</span> <p>Название продукта</p>
+                <a href="index.php"><p>Menu</p></a><span>&#8594;</span><a href="cartegory.php"><p>ЖЕНЩИНА</p></a><span>&#8594;</span><p>Новинки</p><span>&#8594;</span> <p>Название продукта</p>
             </div>
         </div>
         <div class="product-content row">
             <div class="product-content-left row">
                 <div class="product-content-left-big-img">
-                    <img src="./images/sp1.webp" alt="">
+                    <img src="./../images/sp1.webp" alt="">
                 </div>  
                 <div class="product-content-left-small-img">
-                    <img src="./images/sp1.webp" alt="">
-                    <img src="./images/sp1.2.webp" alt="">
-                    <img src="./images/sp1.3.webp" alt="">
-                    <img src="./images/sp1.4.webp" alt="">
+                    <img src="./../images/sp1.webp" alt="">
+                    <img src="./../images/sp1.2.webp" alt="">
+                    <img src="./../images/sp1.3.webp" alt="">
+                    <img src="./../images/sp1.4.webp" alt="">
                 </div>
             </div>
             <div class="product-content-right">
@@ -71,7 +120,7 @@
                 <div class="product-content-right-product-color">
                     <p><span style="font-weight: bold;">Свет</span> : Коричневый</p><span style="color: red;"></span>
                     <div class="product-content-right-product-color-img">
-                        <img src="./images/color004.png" alt="">
+                        <img src="./../images/color004.png" alt="">
                     </div>
                 </div>
                 <div class="product-content-right-product-size">
@@ -90,7 +139,7 @@
                 </div>
                 <p style="color: red;">Пожалуйста, выберите размер</p>
                 <div class="product-content-right-product-button">
-                    <a href="cart.html"><button><i class="fas fa-shopping-cart"></i><p class="text-uppercase">Купить</p></button></a>
+                    <a href="cart.php"><button><i class="fas fa-shopping-cart"></i><p class="text-uppercase">Купить</p></button></a>
                     <button><p class="text-uppercase">Найти в магазине</p></button>
                 </div>
                 <div class="product-content-right-product-icon">
@@ -99,10 +148,10 @@
                     <div class="product-content-right-product-icon-item"><i class="far fa-envelope"></i> <p>Почта</p></div>
                 </div>
                 <div class="product-content-right-product-QR">
-                    <img style="width: 100px;" src="./images/QR_code.svg" alt="">
+                    <img style="width: 100px;" src="./../images/QR_code.svg" alt="">
                 </div>
                 <div class="product-content-right-bottom">
-                    <img class="product-content-right-bottom-top" src="./images/image-down.png">
+                    <img class="product-content-right-bottom-top" src="./../images/image-down.png">
                     <div class="product-content-right-bottom-content-big">
                         <div class="product-content-right-bottom-content-title row">
                             <div class="product-content-right-bottom-content-title-item chitiet activeInfBtn">
@@ -141,36 +190,36 @@
         </div>
         <div class="product-content" style="display: flex;">
             <div class="product-related-item">
-                <a href="product.html">
-                    <img src="images/sp1.webp" alt="">
+                <a href="product.php">
+                    <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
                     <p>1000 <sub>rub</sub></p>
                 </a>  
             </div>
             <div class="product-related-item">
-                <a href="product.html">
-                    <img src="images/sp1.webp" alt="">
+                <a href="product.php">
+                    <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
                     <p>1000 <sub>rub</sub></p>
                 </a>  
             </div>
             <div class="product-related-item">
-                <a href="product.html">
-                    <img src="images/sp1.webp" alt="">
+                <a href="product.php">
+                    <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
                     <p>1000 <sub>rub</sub></p>
                 </a>  
             </div>
             <div class="product-related-item">
-                <a href="product.html">
-                    <img src="images/sp1.webp" alt="">
+                <a href="product.php">
+                    <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
                     <p>1000 <sub>rub</sub></p>
                 </a>  
             </div>
             <div class="product-related-item">
-                <a href="product.html">
-                    <img src="images/sp1.webp" alt="">
+                <a href="product.php">
+                    <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
                     <p>1000 <sub>rub</sub></p>
                 </a>  
@@ -181,8 +230,8 @@
     <section class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
-            <img src="images/appstore.png" alt="">
-            <img src="images/googleplay.png" alt="">
+            <img src="../images/appstore.png" alt="">
+            <img src="../images/googleplay.png" alt="">
         </div>
         <p>Получение сообщений</p>
         <input type="text" placeholder="Вводите вашу электронную почту...">
@@ -200,5 +249,5 @@
         </div>
     </footer>
 </body>
-<script src="./js/script.js"></script>
+<script src="<?php echo '/shop/js/script.js'; ?>"></script>
 </html>
