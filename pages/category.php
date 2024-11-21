@@ -149,7 +149,7 @@ $brand = new brand;
                             foreach ($show_category as $result) {
                                 $category_id = $result['category_id'];     
                                 $category_name = $result['category_name']; 
-                                if (strtolower($category_name) != "информация") 
+                                if (strtolower($category_name) != "Информация") 
                                     echo "<li class='category-left-li text-uppercase'><a href='#'>$category_name</a>";
                                 $result_brand = $brand->search_by_category_id($category_id); 
                                 if ($result_brand && $result_brand->num_rows > 0) {

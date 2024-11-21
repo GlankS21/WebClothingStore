@@ -34,7 +34,7 @@ function slider(index){
 }
 setInterval(imgSlide, 5000);
 // --------------------------Menu-Sliderbar-category---------------------------------------
-const itemsliderbar = document.querySelectorAll(".category-left-li");
+const itemsliderbar = document.querySelectorAll(".category-left");
 itemsliderbar.forEach(function(menu, index) {
     menu.addEventListener("click", function() {
         if (menu.classList.contains("block")) { 
