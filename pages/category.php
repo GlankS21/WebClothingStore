@@ -52,7 +52,7 @@ $brand = new brand;
                         if (strtolower($category_name) == "информация") 
                             echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                         else
-                            echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                            echo "<li><a class='text-uppercase'>$category_name</a>";
                         $result_brand = $brand->search_by_category_id($category_id); 
                         if ($result_brand && $result_brand->num_rows > 0) {
                             echo "<ul class='sub-menu'>";
