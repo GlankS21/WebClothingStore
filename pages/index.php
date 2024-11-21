@@ -1,11 +1,18 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/cartegory_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/category_class.php";
 ?>
 
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
+session_start();  
+if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
+$category = new category;
+$show_category = $category -> show_category();
 $brand = new brand;
 ?>
 
@@ -33,15 +40,15 @@ $brand = new brand;
             </div>
             <div class="menu">
                 <?php
-                if ($show_cartegory) {
-                    foreach ($show_cartegory as $result) {
-                        $cartegory_id = $result['cartegory_id'];     
-                        $cartegory_name = $result['cartegory_name']; 
-                        if (strtolower($cartegory_name) == "информация") 
-                            echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                if ($show_category) {
+                    foreach ($show_category as $result) {
+                        $category_id = $result['category_id'];     
+                        $category_name = $result['category_name']; 
+                        if (strtolower($category_name) == "информация") 
+                            echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                         else
-                            echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                        $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                            echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                        $result_brand = $brand->search_by_category_id($category_id); 
                         if ($result_brand && $result_brand->num_rows > 0) {
                             echo "<ul class='sub-menu'>";
                             while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -59,15 +66,15 @@ $brand = new brand;
             <div class = "sub-mobile-menu">
                 <div class="menu-mb">
                     <?php
-                    if ($show_cartegory) {
-                        foreach ($show_cartegory as $result) {
-                            $cartegory_id = $result['cartegory_id'];     
-                            $cartegory_name = $result['cartegory_name']; 
-                            if (strtolower($cartegory_name) == "информация") 
-                                echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                    if ($show_category) {
+                        foreach ($show_category as $result) {
+                            $category_id = $result['category_id'];     
+                            $category_name = $result['category_name']; 
+                            if (strtolower($category_name) == "информация") 
+                                echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                             else
-                                echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                            $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                                echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                            $result_brand = $brand->search_by_category_id($category_id); 
                             if ($result_brand && $result_brand->num_rows > 0) {
                                 echo "<ul class='sub-menu-mb'>";
                                 while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -84,10 +91,17 @@ $brand = new brand;
             </div>
         </div>
         <div class="others">
-            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.php" ></a></li>
+            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
             <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
+            <?php if (isset($_SESSION['username'])): ?>
+                <li><a><i class="fa fa-user"></i></a></li>
+                <li><a href="?logout=true"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <?php else: ?>
+                <li><a class="fa fa-user" href="login.php"></a></li>
+            <?php endif; ?>
         </div>
+
+
         
     </header>
     <!--------------------------------Slider-------------------------------->

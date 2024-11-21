@@ -8,7 +8,7 @@ $brand = new brand;
 $show_brand = $brand-> show_brand();
 ?>
 <div class="admin-content-right">
-            <div class="admin-content-right-cartegory_list">
+            <div class="admin-content-right-category_list">
                 <h1>Список тип каталога</h1>
                 <table>
                     <tr>
@@ -26,7 +26,7 @@ $show_brand = $brand-> show_brand();
                     <tr>
                         <td><?php echo $i ?></td>
                         <td><?php echo $result['brand_id'] ?></td>
-                        <td><?php echo $result['cartegory_name'] ?></td>
+                        <td><?php echo $result['category_name'] ?></td>
                         <td><?php echo $result['brand_name'] ?></td>
                         <td><a href="brandedit.php?brand_id=<?php echo $result['brand_id'] ?>">Исправить</a>|<a href="branddelete.php?brand_id=<?php echo $result['brand_id'] ?>">Удалить</a></td>
                     </tr>

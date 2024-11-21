@@ -1,11 +1,11 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/cartegory_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/category_class.php";
 ?>
 
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
+$category = new category;
+$show_category = $category -> show_category();
 $brand = new brand;
 ?>
 
@@ -33,15 +33,15 @@ $brand = new brand;
             </div>
             <div class="menu">
                 <?php
-                if ($show_cartegory) {
-                    foreach ($show_cartegory as $result) {
-                        $cartegory_id = $result['cartegory_id'];     
-                        $cartegory_name = $result['cartegory_name']; 
-                        if (strtolower($cartegory_name) == "информация") 
-                            echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                if ($show_category) {
+                    foreach ($show_category as $result) {
+                        $category_id = $result['category_id'];     
+                        $category_name = $result['category_name']; 
+                        if (strtolower($category_name) == "информация") 
+                            echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                         else
-                            echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                        $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                            echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                        $result_brand = $brand->search_by_category_id($category_id); 
                         if ($result_brand && $result_brand->num_rows > 0) {
                             echo "<ul class='sub-menu'>";
                             while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -59,15 +59,15 @@ $brand = new brand;
             <div class = "sub-mobile-menu">
                 <div class="menu-mb">
                     <?php
-                    if ($show_cartegory) {
-                        foreach ($show_cartegory as $result) {
-                            $cartegory_id = $result['cartegory_id'];     
-                            $cartegory_name = $result['cartegory_name']; 
-                            if (strtolower($cartegory_name) == "информация") 
-                                echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                    if ($show_category) {
+                        foreach ($show_category as $result) {
+                            $category_id = $result['category_id'];     
+                            $category_name = $result['category_name']; 
+                            if (strtolower($category_name) == "информация") 
+                                echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                             else
-                                echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                            $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                                echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                            $result_brand = $brand->search_by_category_id($category_id); 
                             if ($result_brand && $result_brand->num_rows > 0) {
                                 echo "<ul class='sub-menu-mb'>";
                                 while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -175,7 +175,7 @@ $brand = new brand;
                         <p style="color: red; font-weight: bold;">Купить больше <span style="font-size: 18px;">500 rub</span></p>
                     </div>
                     <div class="cart-content-right-button">
-                        <button class="text-uppercase"><a href="cartegory.php">Продолжить покупку</a></button>
+                        <button class="text-uppercase"><a href="category.php">Продолжить покупку</a></button>
                         <a href="delivery.php"><button class="text-uppercase">Платить</button></a>
                     </div>
                     <div class="cart-content-right-login">

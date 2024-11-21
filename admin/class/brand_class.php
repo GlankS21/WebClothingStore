@@ -8,20 +8,20 @@ class brand {
     public function __construct(){
         $this -> db = new Database();
     }
-    public function insert_brand($cartegory_id, $brand_name){
-        $query = "INSERT INTO tbl_brand (cartegory_id, brand_name) VALUES ('$cartegory_id','$brand_name')";
+    public function insert_brand($category_id, $brand_name){
+        $query = "INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$category_id','$brand_name')";
         $result = $this -> db -> insert($query);
         header('Location:brandlist.php');
     }
-    public function show_cartegory(){
-        $query = "SELECT * FROM tbl_cartegory ORDER BY cartegory_id DESC";
+    public function show_category(){
+        $query = "SELECT * FROM tbl_category ORDER BY category_id DESC";
         $result = $this -> db -> select($query);
         return $result;
     }
     public function show_brand(){
         // $query = "SELECT * FROM tbl_brand ORDER BY brand_id DESC";
-        $query = "SELECT tbl_brand.*, tbl_cartegory.cartegory_name 
-        FROM tbl_brand INNER JOIN tbl_cartegory ON tbl_brand.cartegory_id = tbl_cartegory.cartegory_id
+        $query = "SELECT tbl_brand.*, tbl_category.category_name 
+        FROM tbl_brand INNER JOIN tbl_category ON tbl_brand.category_id = tbl_category.category_id
         ORDER BY tbl_brand.brand_id DESC";
         $result = $this -> db -> select($query);
         return $result;
@@ -31,8 +31,8 @@ class brand {
         $result = $this -> db -> select($query);
         return $result;
     }
-    public function update_brand($cartegory_id, $brand_name, $brand_id){
-        $query = "UPDATE tbl_brand SET cartegory_id = '$cartegory_id', brand_name = '$brand_name' WHERE brand_id = '$brand_id'";
+    public function update_brand($category_id, $brand_name, $brand_id){
+        $query = "UPDATE tbl_brand SET category_id = '$category_id', brand_name = '$brand_name' WHERE brand_id = '$brand_id'";
         $result = $this -> db -> update($query);
         header('Location:brandlist.php');
         return $result;
@@ -43,8 +43,8 @@ class brand {
         header('Location:brandlist.php');
         return $result;
     }
-    public function search_by_cartegory_id($cartegory_id){
-        $query = "SELECT * FROM tbl_brand WHERE cartegory_id = $cartegory_id";
+    public function search_by_category_id($category_id){
+        $query = "SELECT * FROM tbl_brand WHERE category_id = $category_id";
         $result = $this -> db -> select($query);
         return $result;
     }

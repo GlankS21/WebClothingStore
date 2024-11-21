@@ -20,14 +20,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <label for="">Вводите название товара <span style="color: red;">*</span></label>
                     <input name="product_name" required type="text" placeholder="Вводите название товара">
                     <label for="">Выбирать каталог<span style="color: red;">*</span></label>
-                    <select name="cartegory_id" id="">
+                    <select name="category_id" id="">
                         <option value="#">--Выбирать--</option>
                         <?php
-                        $show_cartegory = $product -> show_cartegory();
-                        if($show_cartegory){
-                            while($result = $show_cartegory -> fetch_assoc()){                            
+                        $show_category = $product -> show_category();
+                        if($show_category){
+                            while($result = $show_category -> fetch_assoc()){                            
                         ?>
-                        <option value="<?php echo $result['cartegory_id']?>"><?php echo $result['cartegory_name']?></option>
+                        <option value="<?php echo $result['category_id']?>"><?php echo $result['category_name']?></option>
                         <?php
                             }
                         }

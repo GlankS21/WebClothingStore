@@ -3,8 +3,8 @@
             <ul>
                 <li><a href="">Каталог</a>
                     <ul>
-                        <li><a href="cartegoryAdd.php">Добавить каталог</a></li>
-                        <li><a href="cartegoryList.php">Список каталога</a></li>
+                        <li><a href="categoryAdd.php">Добавить каталог</a></li>
+                        <li><a href="categoryList.php">Список каталога</a></li>
                     </ul>
                 </li>
                 <li><a href="">Тип продукта</a>

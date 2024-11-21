@@ -1,12 +1,38 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/cartegory_class.php";
-?>
+session_start(); 
+ob_start();    
 
-<?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
-$brand = new brand;
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/category_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/user_class.php";
+
+$category = new category();
+$show_category = $category->show_category();
+$brand = new brand();
+$user = new user();
+
+if (isset($_POST['login']) && $_POST['login']) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role = $user->check_user($username, $password);
+
+    if ($role === '1') { 
+        $_SESSION['logged_in'] = true;  
+        $_SESSION['role'] = 1;           
+        $_SESSION['username'] = $username;  
+        header('Location: http://localhost/shop/admin/brandlist.php');
+        exit();
+    } elseif ($role === '0') { 
+        $_SESSION['logged_in'] = true;  
+        $_SESSION['role'] = 0;           
+        $_SESSION['username'] = $username;  
+        header('Location: http://localhost/shop/pages/index.php');
+        exit();
+    } else { 
+        $txt_erro = "Имя пользователя или пароль неверны";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,15 +59,15 @@ $brand = new brand;
             </div>
             <div class="menu">
                 <?php
-                if ($show_cartegory) {
-                    foreach ($show_cartegory as $result) {
-                        $cartegory_id = $result['cartegory_id'];     
-                        $cartegory_name = $result['cartegory_name']; 
-                        if (strtolower($cartegory_name) == "информация") 
-                            echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                if ($show_category) {
+                    foreach ($show_category as $result) {
+                        $category_id = $result['category_id'];     
+                        $category_name = $result['category_name']; 
+                        if (strtolower($category_name) == "информация") 
+                            echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                         else
-                            echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                        $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                            echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                        $result_brand = $brand->search_by_category_id($category_id); 
                         if ($result_brand && $result_brand->num_rows > 0) {
                             echo "<ul class='sub-menu'>";
                             while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -59,15 +85,15 @@ $brand = new brand;
             <div class = "sub-mobile-menu">
                 <div class="menu-mb">
                     <?php
-                    if ($show_cartegory) {
-                        foreach ($show_cartegory as $result) {
-                            $cartegory_id = $result['cartegory_id'];     
-                            $cartegory_name = $result['cartegory_name']; 
-                            if (strtolower($cartegory_name) == "информация") 
-                                echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                    if ($show_category) {
+                        foreach ($show_category as $result) {
+                            $category_id = $result['category_id'];     
+                            $category_name = $result['category_name']; 
+                            if (strtolower($category_name) == "информация") 
+                                echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                             else
-                                echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                            $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                                echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                            $result_brand = $brand->search_by_category_id($category_id); 
                             if ($result_brand && $result_brand->num_rows > 0) {
                                 echo "<ul class='sub-menu-mb'>";
                                 while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -96,18 +122,25 @@ $brand = new brand;
             <div class="login-container-left">
                 <h1>У вас уже есть аккаунт ? </h1> <br>
                 <p>Если у вас уже есть аккаунт, войдите в систему, чтобы накапливать баллы за участие и получать более выгодные предложения!</p><br>
-                <form id="login-form" action="">
-                    <input type="text" class="login-email" placeholder="Email">
-                    <input type="text" class="login-email" placeholder="Password">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="login-form" method="post">
+                    <input type="text" class="login-email" name="username" placeholder="Email" required>
+                    <input type="password" class="login-email" name="password" placeholder="Password" required>
+                    <?php
+                        if (isset($txt_erro)) {
+                            echo "<p style='color:red;'>$txt_erro</p>";
+                        }
+                    ?>
                     <div class="login-container-left-remember">
                         <label>
                             <input class="checkboxs" value="1" name="customer_remember" type="checkbox">
                             <span style="margin-left: 5px;">Запомнить меня</span>
                         </label>
-                        <a style=" text-align: right; text-decoration: underline;" class="auth__form__link" href="registation.php">Забыли пароль? </a>
+                        <a style="text-align: right; text-decoration: underline;" class="auth__form__link" href="registation.php">Забыли пароль?</a>
                     </div>
-                    <br><button class="text-uppercase">Логин</button>
+                    <br>
+                    <input style="background-color: #000; color: #fff; cursor: pointer;" type="submit" name="login" class="login-button text-uppercase" value="Логин">
                 </form>
+
             </div>
             <div class="login-container-right">
                 <h1>Новый клиент</h1><br>

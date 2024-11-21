@@ -7,14 +7,14 @@ class product {
     public function __construct(){
         $this -> db = new Database();
     }
-    public function show_cartegory(){
-        $query = "SELECT * FROM tbl_cartegory ORDER BY cartegory_id DESC";
+    public function show_category(){
+        $query = "SELECT * FROM tbl_category ORDER BY category_id DESC";
         $result = $this -> db -> select($query);
         return $result;
     }
     public function insert_product(){
         $product_name = $_POST['product_name'];
-        $cartegory_id = $_POST['cartegory_id'];
+        $category_id = $_POST['category_id'];
         $brand_id = $_POST['brand_id'];
         $product_price = $_POST['product_price'];
         $product_price_new = $_POST['product_price_new'];
@@ -23,7 +23,7 @@ class product {
         move_uploaded_file($_FILES['product_img']['tmp_name'],"uploads/".$_FILES['product_img']['name']);
         $query = "INSERT INTO tbl_product (
             product_name,
-            cartegory_id,
+            category_id,
             brand_id,
             product_price,
             product_price_new,
@@ -31,7 +31,7 @@ class product {
             product_img)
             VALUES (
             '$product_name',
-            '$cartegory_id',
+            '$category_id',
             '$brand_id',
             '$product_price',
             '$product_price_new',
@@ -54,17 +54,24 @@ class product {
     }
 
     public function show_product(){
-        $query = "SELECT tbl_product.*, tbl_cartegory.cartegory_name, tbl_brand.brand_name FROM tbl_product 
-        INNER JOIN tbl_cartegory ON tbl_product.cartegory_id = tbl_cartegory.cartegory_id 
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id 
         INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id 
         ORDER BY tbl_product.product_id DESC";
         $result = $this -> db -> select($query);
         return $result;
     }
+    public function show_product_by_brand($category_id, $brand_id) {
+        $query = "SELECT* FROM tbl_product 
+                  WHERE category_id = $category_id AND brand_id = $brand_id";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    
     public function show_brand(){
         // $query = "SELECT * FROM tbl_brand ORDER BY brand_id DESC";
-        $query = "SELECT tbl_brand.*, tbl_cartegory.cartegory_name 
-        FROM tbl_brand INNER JOIN tbl_cartegory ON tbl_brand.cartegory_id = tbl_cartegory.cartegory_id
+        $query = "SELECT tbl_brand.*, tbl_category.category_name 
+        FROM tbl_brand INNER JOIN tbl_category ON tbl_brand.category_id = tbl_category.category_id
         ORDER BY tbl_brand.brand_id DESC";
         $result = $this -> db -> select($query);
         return $result;
@@ -74,8 +81,8 @@ class product {
         $result = $this -> db -> select($query);
         return $result;
     }
-    public function update_product($cartegory_id, $product_name, $product_id){
-        $query = "UPDATE tbl_product SET cartegory_id = '$cartegory_id', product_name = '$product_name' WHERE product_id = '$product_id'";
+    public function update_product($category_id, $product_name, $product_id){
+        $query = "UPDATE tbl_product SET category_id = '$category_id', product_name = '$product_name' WHERE product_id = '$product_id'";
         $result = $this -> db -> update($query);
         header('Location:productlist.php');
         return $result;

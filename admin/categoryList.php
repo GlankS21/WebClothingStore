@@ -1,14 +1,14 @@
 <?php
 include "header.php";
 include "slider.php";
-include "class/cartegory_class.php";
+include "class/category_class.php";
 ?>
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
+$category = new category;
+$show_category = $category -> show_category();
 ?>
 <div class="admin-content-right">
-            <div class="admin-content-right-cartegory_list">
+            <div class="admin-content-right-category_list">
                 <h1>Список каталога</h1>
                 <table>
                     <tr>
@@ -18,15 +18,15 @@ $show_cartegory = $cartegory -> show_cartegory();
                         <th>Операция</th>
                     </tr>
                     <?php
-                    if($show_cartegory){
+                    if($show_category){
                         $i = 0;
-                        while($result = $show_cartegory->fetch_assoc()){ $i++;
+                        while($result = $show_category->fetch_assoc()){ $i++;
                     ?>
                     <tr>
                         <td><?php echo $i ?></td>
-                        <td><?php echo $result['cartegory_id'] ?></td>
-                        <td><?php echo $result['cartegory_name'] ?></td>
-                        <td><a href="cartegoryedit.php?cartegory_id=<?php echo $result['cartegory_id'] ?>">Исправить</a>|<a href="cartegorydelete.php?cartegory_id=<?php echo $result['cartegory_id'] ?>">Удалить</a></td>
+                        <td><?php echo $result['category_id'] ?></td>
+                        <td><?php echo $result['category_name'] ?></td>
+                        <td><a href="categoryedit.php?category_id=<?php echo $result['category_id'] ?>">Исправить</a>|<a href="categorydelete.php?category_id=<?php echo $result['category_id'] ?>">Удалить</a></td>
                     </tr>
                     <?php 
                         }

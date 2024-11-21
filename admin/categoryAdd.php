@@ -1,21 +1,21 @@
 <?php
 include "header.php";
 include "slider.php";
-include "class/cartegory_class.php";
+include "class/category_class.php";
 ?>
 <?php
-$cartegory = new cartegory();
+$category = new category();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $cartegory_name = $_POST['cartegory_name'];
-    $insert_cartegory = $cartegory -> insert_cartegory($cartegory_name);
+    $category_name = $_POST['category_name'];
+    $insert_category = $category -> insert_category($category_name);
 }
 ?>
 
 <div class="admin-content-right">
-            <div class="admin-content-right-cartegory_add">
+            <div class="admin-content-right-category_add">
                 <h1>Добавить каталог</h1>
                 <form action="" method="POST">
-                    <input name="cartegory_name" type="text" placeholder="Вводите название каталога" required>
+                    <input name="category_name" type="text" placeholder="Вводите название каталога" required>
                     <button type="submit">Добавить</button>
                 </form>
             </div>
@@ -24,13 +24,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </body>
 </html>
 <style>
-    .admin-content-right-cartegory_add input{
+    .admin-content-right-category_add input{
     height: 30px;
     width: 250px;
     padding-left: 12px;
     margin-top: 20px;
     }
-    .admin-content-right-cartegory_add button{
+    .admin-content-right-category_add button{
         display: block;
         margin-top: 10px;
         height: 30px;
@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         background-color: var(--back-color);
         transition: all 0.3s ease;
     }
-    .admin-content-right-cartegory_add button:hover{
+    .admin-content-right-category_add button:hover{
         color: var(--back-color);
         background-color: var(--while-color);
     }

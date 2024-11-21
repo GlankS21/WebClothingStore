@@ -1048,6 +1048,12 @@ footer{
     font-size: 14px;
     border: 1px solid #ddd;
 }
+.login-container-left .login-button{
+    background-color: var(--black-color) !important; 
+    color: var(--white-color);
+    cursor: pointer;
+}
+
 .login-container-left-remember{
     display: flex;
     font-size: 14px;

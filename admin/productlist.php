@@ -8,7 +8,7 @@ $product = new product;
 $show_product = $product-> show_product();
 ?>
 <div class="admin-content-right">
-    <div class="admin-content-right-cartegory_list">
+    <div class="admin-content-right-category_list">
         <h1>Список тип продукта</h1>
         <table>
             <tr>
@@ -29,7 +29,7 @@ $show_product = $product-> show_product();
             ?>
             <tr>
                 <td><?php echo $result['product_id']; ?></td>
-                <td><?php echo $result['cartegory_name']; ?></td>
+                <td><?php echo $result['category_name']; ?></td>
                 <td><?php echo $result['brand_name']; ?></td>
                 <td><?php echo $result['product_name']; ?></td>
                 <td><?php echo $result['product_price']; ?></td>

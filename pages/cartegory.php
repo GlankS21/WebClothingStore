@@ -1,11 +1,12 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/brand_class.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/cartegory_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/category_class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/shop/admin/class/product_class.php";
 ?>
 
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory -> show_cartegory();
+$category = new category;
+$show_category = $category -> show_category();
 $brand = new brand;
 ?>
 
@@ -44,20 +45,21 @@ $brand = new brand;
             </div>
             <div class="menu">
                 <?php
-                if ($show_cartegory) {
-                    foreach ($show_cartegory as $result) {
-                        $cartegory_id = $result['cartegory_id'];     
-                        $cartegory_name = $result['cartegory_name']; 
-                        if (strtolower($cartegory_name) == "информация") 
-                            echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                if ($show_category) {
+                    foreach ($show_category as $result) {
+                        $category_id = $result['category_id'];     
+                        $category_name = $result['category_name']; 
+                        if (strtolower($category_name) == "информация") 
+                            echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                         else
-                            echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                        $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                            echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                        $result_brand = $brand->search_by_category_id($category_id); 
                         if ($result_brand && $result_brand->num_rows > 0) {
                             echo "<ul class='sub-menu'>";
                             while ($brand_row = $result_brand->fetch_assoc()) { 
                                 $brand_name = $brand_row['brand_name'];
-                                echo "<li><a href='#'>$brand_name</a></li>";
+                                $brand_id = $brand_row['brand_id'];
+                                echo "<li><a href='category.php?id=$category_id&brand_id=$brand_id'>$brand_name</a></li>";
                             }
                             echo "</ul>";
                         }
@@ -70,15 +72,15 @@ $brand = new brand;
             <div class = "sub-mobile-menu">
                 <div class="menu-mb">
                     <?php
-                    if ($show_cartegory) {
-                        foreach ($show_cartegory as $result) {
-                            $cartegory_id = $result['cartegory_id'];     
-                            $cartegory_name = $result['cartegory_name']; 
-                            if (strtolower($cartegory_name) == "информация") 
-                                echo "<li><a class='text-uppercase' href='information.php'>$cartegory_name</a>";
+                    if ($show_category) {
+                        foreach ($show_category as $result) {
+                            $category_id = $result['category_id'];     
+                            $category_name = $result['category_name']; 
+                            if (strtolower($category_name) == "информация") 
+                                echo "<li><a class='text-uppercase' href='information.php'>$category_name</a>";
                             else
-                                echo "<li><a class='text-uppercase' href='cartegory.php?id=$cartegory_id'>$cartegory_name</a>";
-                            $result_brand = $brand->search_by_cartegory_id($cartegory_id); 
+                                echo "<li><a class='text-uppercase' href='category.php?id=$category_id'>$category_name</a>";
+                            $result_brand = $brand->search_by_category_id($category_id); 
                             if ($result_brand && $result_brand->num_rows > 0) {
                                 echo "<ul class='sub-menu-mb'>";
                                 while ($brand_row = $result_brand->fetch_assoc()) { 
@@ -101,99 +103,153 @@ $brand = new brand;
         </div>
         
     </header>
-    <!--------------------------------Cartegory-------------------------------->
-    <section class="cartegory">
+    <!--------------------------------category-------------------------------->
+    <section class="category">
         <div class="container">
-            <div class="cartegory-top row">
-                <a href="index.php"><p>Menu</p></a><span>&#8594;</span><a href="cartegory.php"><p>ЖЕНЩИНА</p></a><span>&#8594;</span><p>Новинки</p>
+            <div class="category-top row">
+            <?php
+                $current_category_id = $_GET['id'] ?? '';
+                $current_brand_id = $_GET['brand_id'] ?? '';
+                $current_category_name = '';
+                $current_brand_name = '';
+                if ($show_category) {
+                    foreach ($show_category as $category_item) {
+                        if ($category_item['category_id'] == $current_category_id) {
+                            $current_category_name = $category_item['category_name'];  
+                            if ($current_brand_id) {
+                                $brand_result = $brand->search_by_category_id($current_category_id);
+                                while ($brand_row = $brand_result->fetch_assoc()) {
+                                    if ($brand_row['brand_id'] == $current_brand_id) {
+                                        $current_brand_name = $brand_row['brand_name'];
+                                        break; 
+                                    }
+                                }
+                            }
+                            break;  
+                        }
+                    }
+                }
+                echo "<a href='index.php'><p>Menu</p></a> <span>&#8594;</span>";
+                if ($current_category_id && $current_category_name) {
+                    echo "<a href='category.php?id=$current_category_id'><p>$current_category_name</p></a>";
+                }
+                if ($current_brand_id && $current_brand_name) {
+                    echo " <span>&#8594;</span> <a href='category.php?id=$current_category_id&brand_id=$current_brand_id'><p>$current_brand_name</p></a>";
+                }
+            ?>
+
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="cartegory-left">
+                <div class="category-left">
                     <ul>
-                        <li class="cartegory-left-li"><a href="#">ЖЕНЩИНА</a>
-                            <ul>
-                                <li><a href="">Новинки</a></li>
-                                <li><a href="">Коллекция</a></li>
-                                <li><a href="">Верхняя одежда</a></li>
-                                <li><a href="">Джинсы</a></li>
-                            </ul>
-                        </li>
-                        <li class="cartegory-left-li"><a href="#">МУЖЧИНА</a>
-                            <ul>
-                                <li><a href="">Новинки</a></li>
-                                <li><a href="">Коллекция</a></li>
-                                <li><a href="">Верхняя одежда</a></li>
-                                <li><a href="">Джинсы</a></li>
-                            </ul>
-                        </li>
-                        <li class="cartegory-left-li"><a href="#">ДЕТИ</a></li>
-                        <li class="cartegory-left-li"><a href="#">КОЛЛЕКЦИЯ</a></li>
+                        <?php
+                        if ($show_category) {
+                            foreach ($show_category as $result) {
+                                $category_id = $result['category_id'];     
+                                $category_name = $result['category_name']; 
+                                if (strtolower($category_name) != "информация") 
+                                    echo "<li class='category-left-li text-uppercase'><a href='#'>$category_name</a>";
+                                $result_brand = $brand->search_by_category_id($category_id); 
+                                if ($result_brand && $result_brand->num_rows > 0) {
+                                    echo "<ul>";
+                                    while ($brand_row = $result_brand->fetch_assoc()) { 
+                                        $brand_name = $brand_row['brand_name'];
+                                        $brand_id = $brand_row['brand_id'];
+                                        echo "<li style='text-transform: none;'><a href='category.php?id=$category_id&brand_id=$brand_id'>$brand_name</a></li>";
+                                    }
+                                    echo "</ul>";
+                                }
+                                echo "</li>";
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
-                <div class="cartegory-right row">
-                    <div class="cartegory-right-top-item">
-                        <p>Новинки</p>
+                <div class="category-right row">
+                    <div class="category-right-top-item">
+                        <?php
+                            echo "<p>$current_brand_name</p>";
+                        ?>
                     </div>
-                    <div class="cartegory-right-top-item">
+                    <div class="category-right-top-item">
                         <select name="" id="">
                             <option value="">Популярные</option>
                             <option value="">Дешевле</option>
                             <option value="">Дороже</option>
                         </select>
                     </div>
-                    <div class="cartegory-right-content row">
-                        <div class="cartegory-right-content-item">
+                    <div class="category-right-content row">
+                        <?php
+                        $product = new product();
+                        $current_product = $product->show_product_by_brand($current_category_id, $current_brand_id);
+                        if ($current_product) {
+                            foreach ($current_product as $result) {
+                                $product_id = htmlspecialchars($result['product_id']);
+                                $product_img = htmlspecialchars($result['product_img']);
+                                $product_name = htmlspecialchars($result['product_name']);
+                                $product_price = htmlspecialchars($result['product_price']);
+                                echo "<div class='category-right-content-item'>";
+                                echo "<a href='product.php?id=$current_category_id&brand_id=$current_brand_id&product_id=$product_id'>";
+                                echo "<img src='../admin/uploads/$product_img' alt='$product_name'>";
+                                echo "<h1>$product_name</h1>";
+                                echo "</a>";
+                                echo "<p>$product_price<sup>rub</sup></p>";
+                                echo "</div>";
+                            }
+                        }
+                        ?>
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продукта</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
                             </a>
                             <p>999<sup>rub</sup></p>
                         </div>
-                        <div class="cartegory-right-content-item">
+                        <div class="category-right-content-item">
                             <a href="product.php">
                                 <img src="../images/sp1.webp" alt="">
                                 <h1>Название продкута</h1>
@@ -202,8 +258,8 @@ $brand = new brand;
                         </div>
                     </div>
 
-                    <div class="cartegory-right-bottom row">
-                        <div class="cartegory-right-bottom-item">
+                    <div class="category-right-bottom row">
+                        <div class="category-right-bottom-item">
                             <p><span>&#171;<span>1 2 3 4 5</span>&#187;</span> Дальше</p>
                         </div>
                     </div>
