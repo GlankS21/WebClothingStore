@@ -33,8 +33,8 @@ function slider(index){
     dotItem[index].classList.add("active")
 }
 setInterval(imgSlide, 5000);
-// --------------------------Menu-Sliderbar-Cartegory---------------------------------------
-const itemsliderbar = document.querySelectorAll(".cartegory-left-li");
+// --------------------------Menu-Sliderbar-category---------------------------------------
+const itemsliderbar = document.querySelectorAll(".category-left-li");
 itemsliderbar.forEach(function(menu, index) {
     menu.addEventListener("click", function() {
         if (menu.classList.contains("block")) { 

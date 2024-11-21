@@ -53,7 +53,8 @@ $brand = new brand;
                             echo "<ul class='sub-menu'>";
                             while ($brand_row = $result_brand->fetch_assoc()) { 
                                 $brand_name = $brand_row['brand_name'];
-                                echo "<li><a href='#'>$brand_name</a></li>";
+                                $brand_id = $brand_row['brand_id'];
+                                echo "<li><a href='category.php?id=$category_id&brand_id=$brand_id'>$brand_name</a></li>";
                             }
                             echo "</ul>";
                         }
@@ -91,17 +92,10 @@ $brand = new brand;
             </div>
         </div>
         <div class="others">
-            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
+            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.php" ></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
-            <?php if (isset($_SESSION['username'])): ?>
-                <li><a><i class="fa fa-user"></i></a></li>
-                <li><a href="?logout=true"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-            <?php else: ?>
-                <li><a class="fa fa-user" href="login.php"></a></li>
-            <?php endif; ?>
         </div>
-
-
         
     </header>
     <!--------------------------------Slider-------------------------------->

@@ -286,37 +286,37 @@ footer{
     margin-right: 12px;
     color: #333;
 }
-/* -------------------------Cartegory------------------------- */
-.cartegory{
+/* -------------------------category------------------------- */
+.category{
     padding: 100px 100px;
 }
-.cartegory-top{
+.category-top{
     margin-bottom: 50px;
 }
-.cartegory-top p{
+.category-top p{
     font-family: var(--main-text-font);
     margin: 0 12px;
     font-size: 14px;
 }
-.cartegory-top span{
+.category-top span{
     line-height: 16px;
 }
-.cartegory-left{
+.category-left{
     width: 20%;
 }
-.cartegory-right{
+.category-right{
     width: 80%;
 }
-.cartegory-right-top-item{
+.category-right-top-item{
     flex: 1;
     padding: 0 12px;
 }
-.cartegory-right-top-item:first-child{
+.category-right-top-item:first-child{
     flex: 2;
     font-size: 16px;
     font-weight: bold;
 }
-.cartegory-right-top-item button, select{
+.category-right-top-item button, select{
     width: 100%;
     padding: 10px 15px;
     display: flex;
@@ -325,59 +325,59 @@ footer{
     border: 1px solid #ddd;
     cursor: pointer;
 }
-.cartegory-right-content{
+.category-right-content{
     margin-top: 20px;
     justify-content: space-between;
 }
-.cartegory-right-content-item{
+.category-right-content-item{
     width: calc(25% - 12px);
     text-align: center;
     padding: 12px 0;
 }
-.cartegory-right-content-item h1{
+.category-right-content-item h1{
     font-size: 14px;
     font-family: var(--main-text-font);
     margin-top: 6px;
     color: #333;
 }
-.cartegory-right-content-item img{
+.category-right-content-item img{
     width: 100%;
 }
-.cartegory-right-content-item p{
+.category-right-content-item p{
     font-size: 14px;
 }
-.cartegory-right-bottom{
+.category-right-bottom{
     justify-content: space-between;
     margin: 30px 0 20px;
     width: 100%;
 }
-.cartegory-right-bottom p{
+.category-right-bottom p{
     font-family: var(--main-text-font);
     font-size: 11px;
 }
-.cartegory-left ul li{
+.category-left ul li{
     padding-top: 18px;
 }
-.cartegory-left ul li:last-child{
+.category-left ul li:last-child{
     padding-bottom: 18px;
 }
-.cartegory-left ul li a{
+.category-left ul li a{
     color: var(--back-color);
     font-size: 16px;
 }
-.cartegory-left > ul > li > a{
+.category-left > ul > li > a{
     font-weight: bold;
 }
-.cartegory-left ul li ul li{
+.category-left ul li ul li{
     padding-left: 10px;
 }
-.cartegory-left-li ul{
+.category-left-li ul{
     display: none;
 }
-.cartegory-left-li.block ul{
+.category-left-li.block ul{
     display: block;
 }
-.cartegory-left ul li ul li a{
+.category-left ul li ul li a{
     color: #333;
     font-size: 14px;
 }
@@ -1203,32 +1203,32 @@ footer{
     .app-container{
         padding:  50px 0;
     }
-    /* -------------------------Cartegory------------------------- */
-    .cartegory{
+    /* -------------------------category------------------------- */
+    .category{
         padding: 100px 30px;
     }
-    .cartegory-top{
+    .category-top{
         font-size: 10px;
     }
-    .cartegory-left{
+    .category-left{
         display: none;
     }
-    .cartegory-right{
+    .category-right{
         width: 100%;
     }
-    .cartegory-right-top-item{
+    .category-right-top-item{
         padding: 0 12px;
     }
-    .cartegory-right-top-item:first-child{
+    .category-right-top-item:first-child{
         flex: 1;
         margin-top: 14px;
         font-size: 16px;
         font-weight: bold;
     }
-    .cartegory-right-top-item:last-child{
+    .category-right-top-item:last-child{
         flex: 2;
     }
-    .cartegory-right-top-item button, select{
+    .category-right-top-item button, select{
         width: 100%;
         padding: 10px 15px;
         display: flex;
@@ -1237,7 +1237,7 @@ footer{
         border: 1px solid #ddd;
         cursor: pointer;
     }
-    .cartegory-right-content-item{
+    .category-right-content-item{
         width: calc(50% - 12px);
         text-align: center;
         padding: 12px 0;
