@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Shop-Project</title>
 </head>
 <body>
-    <!--------------------------------Header-------------------------------->
+    <!-- Header -->
     <header>
         <div class="logo">
-            <a href="index.html"><img style="width: 6em;" src="images/logo.png"></a>
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
         </div>
         <div class="menu-main">
             <div class="mobile-menu">
@@ -41,7 +40,7 @@
                 <li><a href="">КОЛЛЕКЦИЯ</a></li>
                 <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
             </div>
-            <div class = "sub-mobile-menu">
+            <div class="sub-mobile-menu">
                 <div class="menu-mb">
                     <li><a href="cartegory.html">ЖЕНЩИНА</a>
                         <ul class="sub-menu-mb">
@@ -66,11 +65,10 @@
             </div>
         </div>
         <div class="others">
-            <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.html" ></a></li>
-            <li><a class="fa fa-shopping-bag" href="cart.html"></a></li>
+            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
         </div>
-        
     </header>
     <!--------------------------------Cartegory-------------------------------->
     <section class="cartegory">
@@ -172,38 +170,34 @@
                             <p>999<sup>rub</sup></p>
                         </div>
                     </div>
-
-                    <div class="cartegory-right-bottom row">
-                        <div class="cartegory-right-bottom-item">
-                            <p><span>&#171;<span>1 2 3 4 5</span>&#187;</span> Дальше</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--------------------------------Container-------------------------------->
+    <!-- Container -->
     <section class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
-            <img src="images/appstore.png" alt="">
-            <img src="images/googleplay.png" alt="">
+            <img src="images/appstore.png" alt="app logo" loading="lazy">
+            <img src="images/googleplay.png" alt="app logo" loading="lazy">
         </div>
         <p>Получение сообщений</p>
-        <input type="text" placeholder="Вводите вашу электронную почту...">
+        <input type="text" placeholder="Вводите вашу электронную почту..."><i class="fa-solid fa-arrow-left"></i>
     </section>
-    <!--------------------------------Footer-------------------------------->
+
+    <!-- Footer -->
     <footer>
         <div class="footer-top">
             <li><a href="">Хоанг Ван Куан</a></li>
             <li><a href="">Р3366</a></li>
             <li>
-                <a href="" class="fab fa-facebook-f"></a>
-                <a href="" class="fab fa-twitter"></a>
-                <a href="" class="fab fa-youtube"></a>
+                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
+                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
+                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
             </li>
         </div>
     </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
-<script src="./js/script.js"></script>
 </html>

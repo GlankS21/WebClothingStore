@@ -112,7 +112,7 @@ if (about && contacts) {
         switchTab_About(contactsContentTitle, aboutContentTitle, contactsContent, aboutContent, contacts, about);
     });
 }
-// ----------------
+// ----------------Mobie -----------------------------
 const mobileMenu = document.querySelector('.mobile-menu');
 const subMobileMenu = document.querySelector('.sub-mobile-menu');
 mobileMenu.addEventListener('click', function() {
@@ -120,4 +120,14 @@ mobileMenu.addEventListener('click', function() {
     if (this.classList.contains('active')) { subMobileMenu.style.display = 'block';
     } else { subMobileMenu.style.display = 'none';
     }
+});
+
+// ---------------Select size-----------
+document.querySelectorAll('.size span').forEach(function(size) {
+    size.addEventListener('click', function() {
+        document.querySelectorAll('.size span').forEach(function(span) {
+            span.classList.remove('selected');
+        });
+        this.classList.add('selected');
+    });
 });
