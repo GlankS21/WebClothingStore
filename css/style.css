@@ -1007,6 +1007,9 @@ footer{
     margin-left: auto;
     margin-right: auto;
 }
+.information-content-contacts{
+    display: none;
+}
 .product-content-title{
     padding: 6px 16px;
 }
