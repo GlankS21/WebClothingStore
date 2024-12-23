@@ -20,59 +20,71 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu">
-                <li><a href="cartegory.html">ЖЕНЩИНА</a>
+            <ul class="menu">
+                <li><a>ЖЕНСКОЕ</a>
                     <ul class="sub-menu">
-                        <li><a href="">Новинки</a></li>
-                        <li><a href="">Коллекция</a></li>
-                        <li><a href="">Верхняя одежда</a></li>
-                        <li><a href="">Джинсы</a></li>
+                        <li><a href="cartegory.html">Новинки</a></li>
+                        <li><a href="cartegory.html">Верхняя одежда</a></li>
+                        <li><a href="cartegory.html">Джинсы</a></li>
+                        <li><a href="cartegory.html">Коллекция</a></li>
                     </ul>
                 </li>
-                <li><a href="">МУЖЧИНА</a>
+                <li><a>МУЖСКОЕ</a>
                     <ul class="sub-menu">
-                        <li><a href="">Новинки</a></li>
-                        <li><a href="">Коллекция</a></li>
-                        <li><a href="">Верхняя одежда</a></li>
-                        <li><a href="">Джинсы</a></li>
+                        <li><a href="cartegory.html">Новинки</a></li>
+                        <li><a href="cartegory.html">Верхняя одежда</a></li>
+                        <li><a href="cartegory.html">Джинсы</a></li>
+                        <li><a href="cartegory.html">Коллекция</a></li>
                     </ul>
                 </li>
-                <li><a href="">ДЕТИ</a></li>
-                <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                <li><a>ДЕТИ</a>
+                    <ul class="sub-menu">
+                        <li><a href="cartegory.html">Школа</a></li>
+                        <li><a href="cartegory.html">Девочкам</a></li>
+                        <li><a href="cartegory.html">Мальчикам</a></li>
+                    </ul>
+                </li>
+                <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
                 <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-            </div>
+            </ul>
             <div class="sub-mobile-menu">
-                <div class="menu-mb">
-                    <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                <ul class="menu-mb">
+                    <li><a>ЖЕНСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="">Новинки</a></li>
-                            <li><a href="">Коллекция</a></li>
-                            <li><a href="">Верхняя одежда</a></li>
-                            <li><a href="">Джинсы</a></li>
+                            <li><a href="cartegory.html">Новинки</a></li>
+                            <li><a href="cartegory.html">Верхняя одежда</a></li>
+                            <li><a href="cartegory.html">Джинсы</a></li>
+                            <li><a href="cartegory.html">Коллекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="">МУЖЧИНА</a>
+                    <li><a>МУЖСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="">Новинки</a></li>
-                            <li><a href="">Коллекция</a></li>
-                            <li><a href="">Верхняя одежда</a></li>
-                            <li><a href="">Джинсы</a></li>
+                            <li><a href="cartegory.html">Новинки</a></li>
+                            <li><a href="cartegory.html">Верхняя одежда</a></li>
+                            <li><a href="cartegory.html">Джинсы</a></li>
+                            <li><a href="cartegory.html">Коллекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="">ДЕТИ</a></li>
-                    <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="cartegory.html">Школа</a></li>
+                            <li><a href="cartegory.html">Девочкам</a></li>
+                            <li><a href="cartegory.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
                     <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-                </div>
+                </ul>
             </div>
         </div>
-        <div class="others">
+        <ul class="others">
             <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
-        </div>
+        </ul>
     </header>
-    <!--------------------------------Delivery---------------------------------->
-    <section id="payment">
+    <!--Delivery-->
+    <div id="payment">
         <div class="container">
             <div class="payment-top-wrap">
                 <div class="payment-top">
@@ -94,29 +106,30 @@
                     <div class="payment-content-left-method-delivery">
                         <p style="font-weight: bold;">Способ доставки</p>
                         <div class="payment-content-left-method-delivery-item">
-                            <input type="radio">
-                            <label for="">Экспресс-доставка</label>
-                        </div>
+                            <input type="radio" id="express-delivery" name="delivery-method">
+                            <label for="express-delivery">Экспресс-доставка</label>
+                        </div>                        
                         <p style="font-weight: bold;">Способ оплаты</p>
                         <p style="padding-top: 6px;">Каждая транзакция безопасна и зашифрована. Информация о кредитной карте никогда не будет сохранена.</p>
                         <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Оплата кредитной картой (OnePay)</label>
+                            <input id="credit-card" name="method-payment" type="radio">
+                            <label for="credit-card">Оплата кредитной картой (OnePay)</label>
                         </div>   
                         <div class="payment-content-left-method-payment-item-img">
-                            <img src="./images/visa.png" alt="">
+                            <img src="./images/visa.png" alt="Visa">
                         </div>
+                        
                         <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Оплата банковской картой (OnePay)</label>
+                            <input id="bank-card" name="method-payment" type="radio">
+                            <label for="bank-card">Оплата банковской картой (OnePay)</label>
                         </div>   
                         <div class="payment-content-left-method-payment-item-img">
-                            <img src="./images/mastercard.png" alt="">
-                        </div>
+                            <img src="./images/mastercard.png" alt="Mastercard">
+                        </div>    
                         <div class="payment-content-left-method-payment-item">
-                            <input name="method-payment" type="radio">
-                            <label for="">Наличными</label>
-                        </div> 
+                            <input id="cash" name="method-payment" type="radio">
+                            <label for="cash">Наличными</label>
+                        </div>                          
                     </div>
                 </div>
                 <div class="payment-content-right">
@@ -129,7 +142,7 @@
                         <button><i class="fas fa-check"></i></button>
                     </div>
                     <div class="payment-content-right-mnv">
-                        <select name="" id="">
+                        <select name="payment-discount" id="payment-discount">
                             <option value="">Выберите код лояльности сотрудника</option>
                             <option value="">D345</option>
                             <option value="">A345</option>
@@ -144,9 +157,9 @@
             </div>
         </div>
         
-    </section>
-    <!--------------------------------Container----------------------------->
-    <section class="app-container">
+    </div>
+    <!--Container-->
+    <div class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
             <img src="images/appstore.png" alt="">
@@ -154,19 +167,20 @@
         </div>
         <p>Получение сообщений</p>
         <input type="text" placeholder="Вводите вашу электронную почту...">
-    </section>
-    <!--------------------------------Footer-------------------------------->
+    </div>
+    <!--Footer-->
     <footer>
-        <div class="footer-top">
+        <ul class="footer-top">
             <li><a href="">Хоанг Ван Куан</a></li>
             <li><a href="">Р3366</a></li>
             <li>
-                <a href="" class="fab fa-facebook-f"></a>
-                <a href="" class="fab fa-twitter"></a>
-                <a href="" class="fab fa-youtube"></a>
+                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
+                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
+                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
             </li>
-        </div>
+        </ul>
     </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
-<script src="./js/script.js"></script>
 </html>

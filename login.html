@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,64 +19,76 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu">
-                <li><a href="cartegory.html">ЖЕНЩИНА</a>
+            <ul class="menu">
+                <li><a>ЖЕНСКОЕ</a>
                     <ul class="sub-menu">
-                        <li><a href="">Новинки</a></li>
-                        <li><a href="">Коллекция</a></li>
-                        <li><a href="">Верхняя одежда</a></li>
-                        <li><a href="">Джинсы</a></li>
+                        <li><a href="cartegory.html">Новинки</a></li>
+                        <li><a href="cartegory.html">Верхняя одежда</a></li>
+                        <li><a href="cartegory.html">Джинсы</a></li>
+                        <li><a href="cartegory.html">Коллекция</a></li>
                     </ul>
                 </li>
-                <li><a href="">МУЖЧИНА</a>
+                <li><a>МУЖСКОЕ</a>
                     <ul class="sub-menu">
-                        <li><a href="">Новинки</a></li>
-                        <li><a href="">Коллекция</a></li>
-                        <li><a href="">Верхняя одежда</a></li>
-                        <li><a href="">Джинсы</a></li>
+                        <li><a href="cartegory.html">Новинки</a></li>
+                        <li><a href="cartegory.html">Верхняя одежда</a></li>
+                        <li><a href="cartegory.html">Джинсы</a></li>
+                        <li><a href="cartegory.html">Коллекция</a></li>
                     </ul>
                 </li>
-                <li><a href="">ДЕТИ</a></li>
-                <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                <li><a>ДЕТИ</a>
+                    <ul class="sub-menu">
+                        <li><a href="cartegory.html">Школа</a></li>
+                        <li><a href="cartegory.html">Девочкам</a></li>
+                        <li><a href="cartegory.html">Мальчикам</a></li>
+                    </ul>
+                </li>
+                <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
                 <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-            </div>
+            </ul>
             <div class="sub-mobile-menu">
-                <div class="menu-mb">
-                    <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                <ul class="menu-mb">
+                    <li><a>ЖЕНСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="">Новинки</a></li>
-                            <li><a href="">Коллекция</a></li>
-                            <li><a href="">Верхняя одежда</a></li>
-                            <li><a href="">Джинсы</a></li>
+                            <li><a href="cartegory.html">Новинки</a></li>
+                            <li><a href="cartegory.html">Верхняя одежда</a></li>
+                            <li><a href="cartegory.html">Джинсы</a></li>
+                            <li><a href="cartegory.html">Коллекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="">МУЖЧИНА</a>
+                    <li><a>МУЖСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="">Новинки</a></li>
-                            <li><a href="">Коллекция</a></li>
-                            <li><a href="">Верхняя одежда</a></li>
-                            <li><a href="">Джинсы</a></li>
+                            <li><a href="cartegory.html">Новинки</a></li>
+                            <li><a href="cartegory.html">Верхняя одежда</a></li>
+                            <li><a href="cartegory.html">Джинсы</a></li>
+                            <li><a href="cartegory.html">Коллекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="">ДЕТИ</a></li>
-                    <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="cartegory.html">Школа</a></li>
+                            <li><a href="cartegory.html">Девочкам</a></li>
+                            <li><a href="cartegory.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
                     <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-                </div>
+                </ul>
             </div>
         </div>
-        <div class="others">
+        <ul class="others">
             <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
-        </div>
+        </ul>
     </header>
-    <!--------------------------------Login---------------------------------->
-    <section id="login">
+    <!--Login-->
+    <div id="login">
        <div class="container row">
             <div class="login-container-left">
                 <h1>У вас уже есть аккаунт ? </h1> <br>
                 <p>Если у вас уже есть аккаунт, войдите в систему, чтобы накапливать баллы за участие и получать более выгодные предложения!</p><br>
-                <form id="login-form" action="">
+                <form id="login-form" action="index.html" method="POST">
                     <input type="text" class="login-email" placeholder="Email">
                     <input type="text" class="login-email" placeholder="Password">
                     <div class="login-container-left-remember">
@@ -92,12 +104,12 @@
             <div class="login-container-right">
                 <h1>Новый клиент</h1><br>
                 <p>Если у вас еще нет аккаунта, используйте этот вариант, чтобы перейти к форме регистрации. Предоставив свои данные, процесс покупки станет более приятным и быстрым!</p> <br>
-                <a href="registation.html"><button class="text-uppercase">Регистрация</button></a>
+                <button class="text-uppercase" onclick="window.location.href='registation.html'" >Регистрация</button>
             </div>
        </div>
-    </section>
-    <!--------------------------------Container----------------------------->
-    <section class="app-container">
+    </div>
+    <!--Container-->
+    <div class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
             <img src="images/appstore.png" alt="">
@@ -105,19 +117,20 @@
         </div>
         <p>Получение сообщений</p>
         <input type="text" placeholder="Вводите вашу электронную почту...">
-    </section>
-    <!--------------------------------Footer-------------------------------->
+    </div>
+    <!--Footer-->
     <footer>
-        <div class="footer-top">
+        <ul class="footer-top">
             <li><a href="">Хоанг Ван Куан</a></li>
             <li><a href="">Р3366</a></li>
             <li>
-                <a href="" class="fab fa-facebook-f"></a>
-                <a href="" class="fab fa-twitter"></a>
-                <a href="" class="fab fa-youtube"></a>
+                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
+                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
+                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
             </li>
-        </div>
+        </ul>
     </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
-<script src="./js/script.js"></script>
 </html>
