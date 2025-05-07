@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop-Project</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+    <!---------------- Header ----------------------->
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
         </div>
-        <div class="menu-main">
-            <div class="mobile-menu">
+        <nav aria-label="Главное меню">
+            <!-- <div class="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> -->
             <ul class="menu">
-                <li><a>ЖЕНСКОЕ</a>
-                </li>
-                <li><a>МУЖСКОЕ</a>
-                </li>
-                <li><a>ДЕТИ</a>
-                </li>
-                <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
-                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
             </ul>
-            <div class="sub-mobile-menu">
+            <!-- <div class="sub-mobile-menu">
                 <ul class="menu-mb">
                     <li><a>ЖЕНСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="cartegory.html">Новинки</a></li>
-                            <li><a href="cartegory.html">Верхняя одежда</a></li>
-                            <li><a href="cartegory.html">Джинсы</a></li>
-                            <li><a href="cartegory.html">Коллекция</a></li>
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
                         </ul>
                     </li>
                     <li><a>МУЖСКОЕ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="cartegory.html">Новинки</a></li>
-                            <li><a href="cartegory.html">Верхняя одежда</a></li>
-                            <li><a href="cartegory.html">Джинсы</a></li>
-                            <li><a href="cartegory.html">Коллекция</a></li>
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
                         </ul>
                     </li>
                     <li><a>ДЕТИ</a>
                         <ul class="sub-menu-mb">
-                            <li><a href="cartegory.html">Школа</a></li>
-                            <li><a href="cartegory.html">Девочкам</a></li>
-                            <li><a href="cartegory.html">Мальчикам</a></li>
+                            <li><a href="category.html">Школа</a></li>
+                            <li><a href="category.html">Девочкам</a></li>
+                            <li><a href="category.html">Мальчикам</a></li>
                         </ul>
                     </li>
-                    <li><a href="cartegory.html">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
                     <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
                 </ul>
-            </div>
-        </div>
+            </div> -->
+        </nav>
         <ul class="others">
-            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
-            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
         </ul>
     </header>
-    <!-- Slider -->
-    <div id="Slider">
+
+  <!------------- Slider ------------------>
+    <section id="Slider">
         <div class="aspect-ratio-169">
-            <img src="images/banner1.png" alt="slider" loading="lazy">
-            <img src="images/banner2.png" alt="slider" loading="lazy">
-            <img src="images/banner3.png" alt="slider" loading="lazy">
-            <img src="images/banner4.png" alt="slider" loading="lazy">
+            <img src="images/banner1.png" alt="Баннер 1" loading="lazy" />
+            <img src="images/banner2.png" alt="Баннер 2" loading="lazy" />
+            <img src="images/banner3.png" alt="Баннер 3" loading="lazy" />
+            <img src="images/banner4.png" alt="Баннер 4" loading="lazy" />
         </div>
         <div class="dot-container">
             <div class="dot active"></div>
@@ -79,30 +86,163 @@
             <div class="dot"></div>
             <div class="dot"></div>
         </div>
-    </div>
-    <!-- Container -->
-    <div class="app-container">
-        <p>Скачать приложение</p>
-        <div class="app-google">
-            <img src="images/appstore.png" alt="app logo" loading="lazy">
-            <img src="images/googleplay.png" alt="app logo" loading="lazy">
-        </div>
-        <p>Получение сообщений</p>
-        <input type="text" placeholder="Вводите вашу электронную почту..."><i class="fa-solid fa-arrow-left"></i>
-    </div>
+    </section>
+
+  <!-- Main Content -->
+    <main class="main-container">
+        <section class="container-item">
+            <h1 class="container-item-header">НОВИНКИ</h1>
+            <ul class="container-items">
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+            </ul>
+            <button class="button" onclick="window.location.href='category.html'">ПОСМОТРЕТЬ ДАЛЬШЕ</button>
+        </section>
+      
+        <section class="container-item">
+            <h1 class="container-item-header">НОВЫЙ ГОД</h1>
+            <ul class="container-items">
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+                <li class="container-item-product">
+                    <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                    <div class="product-info">
+                        <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                        <p class="product-price">999 ₽</p>
+                        <div class="add-to-cart">
+                            <a href="product.html"><i class="bi bi-cart"></i></a>
+                        </div>
+                    </div>   
+                </li>
+            </ul>
+            <button class="button" onclick="window.location.href='category.html'">ПОСМОТРЕТЬ ДАЛЬШЕ</button>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer>
-        <ul class="footer-top">
-            <li><a href="">Хоанг Ван Куан</a></li>
-            <li><a href="">Р3366</a></li>
-            <li>
-                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
-                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
-                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
-            </li>
-        </ul>
+        <div class="footer-left">
+            <ul class="icon">
+                <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+                <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+                <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+                <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+                <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+            </ul>
+            <button type="button">ТЕЛ: 8 800 770 09 90</button>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-header">
+                <li>Главная</li>
+                <li>Каталог
+                    <ul>
+                        <li>Женское</li>
+                        <li>Мужское</li>
+                        <li>Дети</li>
+                        <li>Коллекция</li>
+                    </ul>
+                </li>
+                <li>О нас
+                    <ul>
+                        <li>Адрес</li>
+                        <li>Почта</li>
+                        <li>Телефон</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
+        </div>
     </footer>
     <script src="./js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
 </html>

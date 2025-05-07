@@ -33,17 +33,31 @@ function slider(index){
     dotItem[index].classList.add("active")
 }
 setInterval(imgSlide, 5000);
-// --------------------------Menu-Sliderbar-Cartegory---------------------------------------
-const itemsliderbar = document.querySelectorAll(".cartegory-left-li");
-itemsliderbar.forEach(function(menu, index) {
-    menu.addEventListener("click", function() {
-        if (menu.classList.contains("block")) { 
-            menu.classList.remove("block")
-        } else {
-            menu.classList.add("block")
-        }
+// --------------------------Filter-Cartegory----------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".item-side-title");
+
+    items.forEach(function (itemTitle) {
+        const parentItem = itemTitle.closest(".item-side");
+        const plusIcon = itemTitle.querySelector(".icon-plus");
+        const minusIcon = itemTitle.querySelector(".icon-minus");
+        const subList = parentItem.querySelector(".sub-list-side");
+
+        itemTitle.addEventListener("click", function () {
+            const isVisible = subList.style.display === "flex";
+            if (isVisible) {
+                subList.style.display = "none";
+                minusIcon.style.display = "none";
+                plusIcon.style.display = "inline";
+            } else {
+                subList.style.display = "flex";
+                plusIcon.style.display = "none";
+                minusIcon.style.display = "inline";
+            }
+        });
     });
 });
+
 // -----------------------------Product--------------------------------------------
 const bigImg = document.querySelector(".product-content-left-big-img img")
 const smallImg = document.querySelectorAll(".product-content-left-small-img img")
