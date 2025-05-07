@@ -14,16 +14,19 @@ $brand = new brand;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo '/shop/css/style.css'; ?>">
     <title>Shop-Project</title>
 </head>
 <body>
-    <!--------------------------------Header-------------------------------->
+    <!-- Header -->
     <header>
         <div class="logo">
+<<<<<<< HEAD:information.html
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+=======
             <a href="index.php"><img style="width: 6em;" src="../images/logo.png"></a>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/information.php
         </div>
         <div class="menu-main">
             <div class="mobile-menu">
@@ -32,6 +35,49 @@ $brand = new brand;
                 <span></span>
             </div>
             <div class="menu">
+<<<<<<< HEAD:information.html
+                <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">МУЖЧИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ДЕТИ</a></li>
+                <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+            </div>
+            <div class="sub-mobile-menu">
+                <div class="menu-mb">
+                    <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="">Новинки</a></li>
+                            <li><a href="">Коллекция</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джинсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">МУЖЧИНА</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="">Новинки</a></li>
+                            <li><a href="">Коллекция</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джинсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">ДЕТИ</a></li>
+                    <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+=======
                 <?php
                 if ($show_category) {
                     foreach ($show_category as $result) {
@@ -80,13 +126,20 @@ $brand = new brand;
                         }
                     }
                     ?>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/information.php
                 </div>
             </div>
         </div>
         <div class="others">
+<<<<<<< HEAD:information.html
+            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+=======
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.php" ></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/information.php
         </div>
         
     </header>
@@ -141,28 +194,39 @@ $brand = new brand;
         </div>
     </section>    
     
-    <!--------------------------------Container----------------------------->
-    <section class="app-container">
+       <!-- Container -->
+       <section class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
+<<<<<<< HEAD:information.html
+            <img src="images/appstore.png" alt="app logo" loading="lazy">
+            <img src="images/googleplay.png" alt="app logo" loading="lazy">
+=======
             <img src="../images/appstore.png" alt="">
             <img src="../images/googleplay.png" alt="">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/information.php
         </div>
         <p>Получение сообщений</p>
-        <input type="text" placeholder="Вводите вашу электронную почту...">
+        <input type="text" placeholder="Вводите вашу электронную почту..."><i class="fa-solid fa-arrow-left"></i>
     </section>
-    <!--------------------------------Footer-------------------------------->
+
+    <!-- Footer -->
     <footer>
         <div class="footer-top">
             <li><a href="">Хоанг Ван Куан</a></li>
             <li><a href="">Р3366</a></li>
             <li>
-                <a href="" class="fab fa-facebook-f"></a>
-                <a href="" class="fab fa-twitter"></a>
-                <a href="" class="fab fa-youtube"></a>
+                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
+                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
+                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
             </li>
         </div>
     </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
+<<<<<<< HEAD:information.html
+=======
 <script src="<?php echo '/shop/js/script.js'; ?>"></script>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/information.php
 </html>

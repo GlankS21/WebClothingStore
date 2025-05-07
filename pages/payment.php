@@ -20,10 +20,14 @@ $brand = new brand;
     <title>Shop-Project</title>
 </head>
 <body>
-    <!--------------------------------Header-------------------------------->
+    <!-- Header -->
     <header>
         <div class="logo">
+<<<<<<< HEAD:payment.html
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+=======
             <a href="index.php"><img style="width: 6em;" src="../images/logo.png"></a>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/payment.php
         </div>
         <div class="menu-main">
             <div class="mobile-menu">
@@ -32,6 +36,49 @@ $brand = new brand;
                 <span></span>
             </div>
             <div class="menu">
+<<<<<<< HEAD:payment.html
+                <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">МУЖЧИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ДЕТИ</a></li>
+                <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+            </div>
+            <div class="sub-mobile-menu">
+                <div class="menu-mb">
+                    <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="">Новинки</a></li>
+                            <li><a href="">Коллекция</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джинсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">МУЖЧИНА</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="">Новинки</a></li>
+                            <li><a href="">Коллекция</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джинсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">ДЕТИ</a></li>
+                    <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+=======
                 <?php
                 if ($show_category) {
                     foreach ($show_category as $result) {
@@ -80,13 +127,20 @@ $brand = new brand;
                         }
                     }
                     ?>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/payment.php
                 </div>
             </div>
         </div>
         <div class="others">
+<<<<<<< HEAD:payment.html
+            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+=======
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.php" ></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/payment.php
         </div>
         
     </header>

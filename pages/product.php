@@ -14,16 +14,24 @@ $brand = new brand;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD:product.html
+=======
     <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo '/shop/css/style.css'; ?>">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Shop-Project</title>
 </head>
 <body>
-    <!--------------------------------Header-------------------------------->
+    <!-- Header -->
     <header>
         <div class="logo">
+<<<<<<< HEAD:product.html
+            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+=======
             <a href="index.php"><img style="width: 6em;" src="../images/logo.png"></a>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
         </div>
         <div class="menu-main">
             <div class="mobile-menu">
@@ -55,8 +63,33 @@ $brand = new brand;
                 }
                 ?>
             </div>
+<<<<<<< HEAD:product.html
+            <div class="menu">
+                <li><a href="cartegory.html">ЖЕНЩИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">МУЖЧИНА</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Коллекция</a></li>
+                        <li><a href="">Верхняя одежда</a></li>
+                        <li><a href="">Джинсы</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ДЕТИ</a></li>
+                <li><a href="">КОЛЛЕКЦИЯ</a></li>
+                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+            </div>
+            <div class="sub-mobile-menu">
+=======
             <!-- Mobile Menu -->
             <div class = "sub-mobile-menu">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
                 <div class="menu-mb">
                     <?php
                     if ($show_category) {
@@ -84,11 +117,16 @@ $brand = new brand;
             </div>
         </div>
         <div class="others">
+<<<<<<< HEAD:product.html
+            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
+            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+=======
             <li><input placeholder="Search" type="text"> <i class ="fas fa-search"></i></li>
             <li><a class="fa fa-user" href="login.php" ></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
         </div>
-        
     </header>
     <!--------------------------------Product---------------------------------->
     <section class = "product">
@@ -115,12 +153,16 @@ $brand = new brand;
                     <p>MSP: 567E2969</p>
                 </div>
                 <div class="product-content-right-product-price">
-                    <p>1000<sub>rub</sub></p>
+                    <p>1000<sup>rub</sup></p>
                 </div>
                 <div class="product-content-right-product-color">
                     <p><span style="font-weight: bold;">Свет</span> : Коричневый</p><span style="color: red;"></span>
                     <div class="product-content-right-product-color-img">
+<<<<<<< HEAD:product.html
+                        <img src="./images/color004.png" alt="logo">
+=======
                         <img src="./../images/color004.png" alt="">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
                     </div>
                 </div>
                 <div class="product-content-right-product-size">
@@ -151,7 +193,11 @@ $brand = new brand;
                     <img style="width: 100px;" src="./../images/QR_code.svg" alt="">
                 </div>
                 <div class="product-content-right-bottom">
+<<<<<<< HEAD:product.html
+                    <img alt="" class="product-content-right-bottom-top" src="./images/image-down.png">
+=======
                     <img class="product-content-right-bottom-top" src="./../images/image-down.png">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
                     <div class="product-content-right-bottom-content-big">
                         <div class="product-content-right-bottom-content-title row">
                             <div class="product-content-right-bottom-content-title-item chitiet activeInfBtn">
@@ -193,61 +239,73 @@ $brand = new brand;
                 <a href="product.php">
                     <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
-                    <p>1000 <sub>rub</sub></p>
+                    <p>1000 <sup>rub</sup></p>
                 </a>  
             </div>
             <div class="product-related-item">
                 <a href="product.php">
                     <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
-                    <p>1000 <sub>rub</sub></p>
+                    <p>1000 <sup>rub</sup></p>
                 </a>  
             </div>
             <div class="product-related-item">
                 <a href="product.php">
                     <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
-                    <p>1000 <sub>rub</sub></p>
+                    <p>1000 <sup>rub</sup></p>
                 </a>  
             </div>
             <div class="product-related-item">
                 <a href="product.php">
                     <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
-                    <p>1000 <sub>rub</sub></p>
+                    <p>1000 <sup>rub</sup></p>
                 </a>  
             </div>
             <div class="product-related-item">
                 <a href="product.php">
                     <img src="../images/sp1.webp" alt="">
                     <h1 class="text-uppercase">Продкута</h1>
-                    <p>1000 <sub>rub</sub></p>
+                    <p>1000 <sup>rub</sup></p>
                 </a>  
             </div>
         </div>
     </section>
-    <!--------------------------------Container-------------------------------->
+    <!-- Container -->
     <section class="app-container">
         <p>Скачать приложение</p>
         <div class="app-google">
+<<<<<<< HEAD:product.html
+            <img src="images/appstore.png" alt="app logo" loading="lazy">
+            <img src="images/googleplay.png" alt="app logo" loading="lazy">
+=======
             <img src="../images/appstore.png" alt="">
             <img src="../images/googleplay.png" alt="">
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
         </div>
         <p>Получение сообщений</p>
-        <input type="text" placeholder="Вводите вашу электронную почту...">
+        <input type="text" placeholder="Вводите вашу электронную почту..."><i class="fa-solid fa-arrow-left"></i>
     </section>
-    <!--------------------------------Footer-------------------------------->
+
+    <!-- Footer -->
     <footer>
         <div class="footer-top">
             <li><a href="">Хоанг Ван Куан</a></li>
             <li><a href="">Р3366</a></li>
             <li>
-                <a href="" class="fab fa-facebook-f"></a>
-                <a href="" class="fab fa-twitter"></a>
-                <a href="" class="fab fa-youtube"></a>
+                <a href="" class="fab fa-facebook-f" aria-hidden="true"></a>
+                <a href="" class="fab fa-twitter" aria-hidden="true"></a>
+                <a href="" class="fab fa-youtube" aria-hidden="true"></a>
             </li>
         </div>
     </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
+<<<<<<< HEAD:product.html
+</html>
+=======
 <script src="<?php echo '/shop/js/script.js'; ?>"></script>
 </html>
+>>>>>>> 80e55b1f2531c408a0fe20e86d9df92190fd6339:pages/product.php
