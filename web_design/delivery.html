@@ -15,11 +15,6 @@
             <img src="images/logo.png" alt="Логотип" loading="lazy"/>
         </div>
         <nav aria-label="Главное меню">
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul class="menu">
                 <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
                 <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
@@ -27,8 +22,14 @@
                 <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
                 <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="sub-mobile-menu">
                 <ul class="menu-mb">
+                    <li class="text-uppercase"><a href="index.html">Главная</a></li>
                     <li><a>ЖЕНСКОЕ</a>
                         <ul class="sub-menu-mb">
                             <li><a href="category.html">Новинки</a></li>
@@ -155,11 +156,16 @@
                             <td>999 ₽</td>
                         </tr>
                         <tr class="summary-total">
-                            <td colspan="3"><strong>Итого</strong></td>
+                            <td><strong>Итого</strong></td>
+                            <td></td>
+                            <td></td>
                             <td><strong>1998 ₽</strong></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+             <div class="delivery-mobile-button" style="display: none;">
+                <button class="button text-uppercase" onclick="window.location.href='payment.html'">Оплата и доставка</button>
             </div>
           </div>
           
@@ -178,17 +184,17 @@
         </div>
         <div class="footer-center">
             <ul class="footer-center-header">
-                <li>Главная</li>
-                <li>Каталог
-                    <ul>
+                <li><a href="">Главная</a></li>
+                <li><a href="">Каталог</a>
+                    <ul class="sub-footer-center">
                         <li>Женское</li>
                         <li>Мужское</li>
                         <li>Дети</li>
                         <li>Коллекция</li>
                     </ul>
                 </li>
-                <li>О нас
-                    <ul>
+                <li><a href="">О нас</a>
+                    <ul class="sub-footer-center">
                         <li>Адрес</li>
                         <li>Почта</li>
                         <li>Телефон</li>
@@ -205,4 +211,19 @@
     <script src="./js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
 </body>
+<script>
+    document.querySelectorAll('.footer-center-header > li.menu-item').forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+        // Toggle the open class
+        this.classList.toggle('open');
+        
+        // Toggle the visibility of the submenu
+        var submenu = this.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});
+
+</script>
 </html>

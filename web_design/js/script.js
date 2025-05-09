@@ -20,6 +20,26 @@ imgPosition.forEach(function(image,index){
         slider(index)
     })
 })
+document.querySelectorAll('.menu-mb > li').forEach(li => {
+    const hasSub = li.querySelector('.sub-menu-mb');
+    if (hasSub) {
+        li.classList.add('has-submenu');
+        li.querySelector('a').addEventListener('click', function(e) {
+            e.preventDefault();
+            li.classList.toggle('open');
+        });
+    }
+});
+document.querySelectorAll('.footer-center-header > li').forEach(li => {
+    const hasSubFooter = li.querySelector('.sub-footer-center');
+    if (hasSubFooter) {
+        li.classList.add('has-subfooter');
+        li.querySelector('a').addEventListener('click', function(e) {
+            e.preventDefault();
+            li.classList.toggle('open');
+        });
+    }
+});
 // --------------------------Menu-Slider---------------------------------------
 function imgSlide(){
     index++;
