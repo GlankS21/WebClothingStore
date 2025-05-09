@@ -4,42 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Shop-Project</title>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
         </div>
-        <div class="menu-main">
+        <nav aria-label="Главное меню">
             <div class="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="menu">
-                <li><a>ЖЕНСКОЕ</a>
-                    <ul class="sub-menu">
-                        <li><a href="category.html">Новинки</a></li>
-                        <li><a href="category.html">Верхняя одежда</a></li>
-                        <li><a href="category.html">Джинсы</a></li>
-                        <li><a href="category.html">Коллекция</a></li>
-                    </ul>
-                </li>
-                <li><a>МУЖСКОЕ</a>
-                    <ul class="sub-menu">
-                        <li><a href="category.html">Новинки</a></li>
-                        <li><a href="category.html">Верхняя одежда</a></li>
-                        <li><a href="category.html">Джинсы</a></li>
-                        <li><a href="category.html">Коллекция</a></li>
-                    </ul>
-                </li>
-                <li><a>ДЕТИ</a>
-                </li>
-                <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
-                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
             </ul>
             <div class="sub-mobile-menu">
                 <ul class="menu-mb">
@@ -70,126 +56,147 @@
                     <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
                 </ul>
             </div>
-        </div>
+        </nav>
         <ul class="others">
-            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
-            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
         </ul>
     </header>
     <!--Cart-->
     <section id="cart">
-        <div class="container">
-            <div class="cart-top-wrap">
-                <div class="cart-top">
-                    <div class="cart-top-cart cart-top-item">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="cart-top-address cart-top-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="cart-top-payment cart-top-item">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-top-address cart-top-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt"></i>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="cart-content" style="display: flex;">
-                <div class="cart-content-left">
-                    <table>
-                        <tr>
-                            <th>Продукт</th>
-                            <th class="deskop-desc">Название</th>
-                            <th class="deskop-desc">Свет</th>
-                            <th class="deskop-desc">Размер</th>
-                            <th class="deskop-desc">Количество</th>
-                            <th class="deskop-desc">Цена</th>
-                            <th class="deskop-desc">Удалить</th>
-                            <th class="mobie-desc">Название</th>
-                            <th class="mobie-desc">Свет</th>
-                            <th class="mobie-desc">Размер</th>
-                            <th class="mobie-desc">Количество</th>
-                            <th class="mobie-desc">Цена</th>
-                            <th class="mobie-desc">Удалить</th>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td class="mobie-desc"><p>Little Tweed Jacket</p></td>
-                            <td class="mobie-desc"><p>Color: <img src="./images/color004.png" alt=""></p></td>
-                            <td class="mobie-desc"><p style="display: inline;">Size: <p style="display: inline;">L</p></td>
-                            <td class="mobie-desc"><p>Количество: <input type="number" value="1" min="1"></p></td>
-                            <td class="mobie-desc"><p style="display: inline;">Цена: <p style="color:rgb(172, 47, 51); display: inline;">999 ₽</p></td>
-                            <td class="mobie-desc" style="text-align: right; padding-right: 20px !important;"><br><i class="fa-solid fa-trash-can"></i></td>
-                            <td class="deskop-desc"><p>Little Tweed Jacket</p></td>
-                            <td class="deskop-desc"><img src="./images/color004.png" alt=""></td>
-                            <td class="deskop-desc"><p>L</p></td>
-                            <td class="deskop-desc"><input type="number" value="1" min="1"></td>
-                            <td class="deskop-desc"><p>999 ₽</p></td>
-                            <td class="deskop-desc"><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                        <tr>
-                            <td><img src="./images/sp1.webp" alt=""></td>
-                            <td class="mobie-desc"><p>Little Tweed Jacket</p></td>
-                            <td class="mobie-desc"><p>Color: <img src="./images/color004.png" alt=""></p></td>
-                            <td class="mobie-desc"><p style="display: inline;">Size: <p style="display: inline;">L</p></td>
-                            <td class="mobie-desc"><p>Количество: <input type="number" value="1" min="1"></p></td>
-                            <td class="mobie-desc"><p style="display: inline;">Цена: <p style="color:rgb(172, 47, 51); display: inline;">999 ₽</p></td>
-                            <td class="mobie-desc" style="text-align: right;  padding-right: 20px !important;"><br><i class="fa-solid fa-trash-can"></i></td>
-                            <td class="deskop-desc"><p>Little Tweed Jacket</p></td>
-                            <td class="deskop-desc"><img src="./images/color004.png" alt=""></td>
-                            <td class="deskop-desc"><p>L</p></td>
-                            <td class="deskop-desc"><input type="number" value="1" min="1"></td>
-                            <td class="deskop-desc"><p>999 ₽</p></td>
-                            <td class="deskop-desc"><i class="fa-solid fa-trash-can"></i></td>
-                        </tr>
-                    </table>
+        <div class="cart-content" style="display: flex;">
+            <h1 class="cart-content-title">КОРЗИНА</h1>
+            <table class="cart-content-left">
+                <thead>
+                    <tr class="deskop-desc">
+                        <th>Продукт</th>
+                        <th>Название</th>
+                        <th>Свет</th>
+                        <th>Размер</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Удалить</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                    <tr>
+                        <td class="product_img"><img src="./images/sp1.webp" alt="product"></td>
+                        <td class="product_name">Юбка миди из вискозы с перфорацией</td>
+                        <td class="product_color"><img src="./images/color004.png" alt=""></td>
+                        <td class="product_size">L</td>
+                        <td class="product_quantity"><input type="number" value="1" min="1"></td>
+                        <td class="product_price">999 ₽</td>
+                        <td class="product_delete"><i class="fa-solid fa-trash-can"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="product_img"><img src="./images/sp1.webp" alt="product"></td>
+                        <td class="product_name">Little Tweed Jacket</td>
+                        <td class="product_color"><img src="./images/color004.png" alt=""></td>
+                        <td class="product_size">L</td>
+                        <td class="product_quantity"><input type="number" value="1" min="1"></td>
+                        <td class="product_price">999 ₽</td>
+                        <td class="product_delete"><i class="fa-solid fa-trash-can"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="cart-content-left-mobile">
+                <tbody>
+                  <tr>
+                    <td class="product_img"><img src="./images/sp1.webp" alt="product"></td>
+                    <td class="product_details">
+                        <div class="table_between">
+                            <p class="product_name">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product_price">999 ₽</p>
+                        </div>
+                        <div class="product_color">
+                            <p>Свет: </p>
+                            <img src="./images/color004.png" alt="">
+                        </div>
+                        <div class="product_size">
+                            <p>Размер: </p>
+                            <p>L</p>
+                        </div>
+                        <div class="table_between">
+                            <div class="product_quantity">
+                                <input type="number" value="1" min="0">
+                                <div class="product_quantity-increase">+</div>
+                                <div class="product_quantity-decrease">-</div>
+                            </div>
+                            <div class="product_delete"><i class="fa-solid fa-trash-can"></i></div>
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>              
+            <!-- Right Content -->
+            <div class="cart-content-right">
+                <table>
+                    <tr>
+                        <th colspan="2" class="text-uppercase">Сумма</th>
+                    </tr>
+                    <tr>
+                        <td class="text-uppercase">Количество товара</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td class="text-uppercase">Общая сумма</td>
+                        <td><p>1998 ₽</p></td>
+                    </tr>
+                    <tr>
+                        <td class="text-uppercase">Итого</td>
+                        <td><p style="color: #000; font-weight: bold;">1998 ₽</p></td>
+                    </tr>
+                </table>
+            
+                <div class="cart-content-right-text">
+                    <p>Вы получите бесплатную доставку при общей стоимости заказа более 2500 рублей.</p>
+                    <p style="color: #dc3545; font-weight: bold;">Купить больше <span style="font-size: 18px;">502 ₽</span></p>
                 </div>
-                <div class="cart-content-right">
-                    <table>
-                        <tr>
-                            <th class="text-uppercase" colspan="2">Сумма</th>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Количество товара</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Общая сумма</td>
-                            <td><p>1998 ₽</p></td>
-                        </tr>
-                        <tr>
-                            <td class="text-uppercase">Итого</td>
-                            <td><p style="color: #000; font-weight: bold;">1998 ₽</p></td>
-                        </tr>
-                    </table>
-                    <div class="cart-content-right-text">
-                        <p>Вы получите бесплатную доставку при общей стоимости заказа более 2500 рублей.</p>
-                        <p style="color: red; font-weight: bold;">Купить больше <span style="font-size: 18px;">502 ₽</span></p>
-                    </div>
-                    <div class="cart-content-right-button">
-                        <button class="text-uppercase" onclick="window.location.href='cartegory.html'">Продолжить покупку</button>
-                        <button class="text-uppercase" onclick="window.location.href='delivery.html'">Платить</button>
-                    </div>
-                    <div class="cart-content-right-login">
-                        <p class="text-uppercase">Аккаунт</p><br>
-                        <p><a style="font-weight: bold;" href="index.html">Войдите </a>в свой аккаунт, чтобы заработать членские баллы</p>
-                    </div>
+            
+                <div class="cart-content-right-button">
+                    <button class="button" onclick="window.location.href='category.html'">Продолжить покупку</button>
+                    <button class="button" onclick="window.location.href='delivery.html'">Платить</button>
                 </div>
+            
+              <div class="cart-content-right-login">
+                <p class="text-uppercase">Аккаунт</p>
+                <p><a href="login.html" style="font-weight: bold;">Войдите</a> в свой аккаунт, чтобы заработать членские баллы</p>
+              </div>
             </div>
         </div>
     </section>
+      
     <!-- Footer -->
     <footer>
         <div class="footer-left">
-            <ul class="icon">
-                <li><img src="./images/icon/facebook.svg" alt=""></li>
-                <li><img src="./images/icon/google.svg" alt=""></li>
-                <li><img src="./images/icon/instagram.svg" alt=""></li>
-                <li><img src="./images/icon/pinteres.svg" alt=""></li>
-                <li><img src="./images/icon/youtube.svg" alt=""></li>
-            </ul>
-            <button>ТЕЛ: 8 800 770 09 90</button>
+        <ul class="icon">
+            <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+            <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+            <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+        </ul>
+        <button type="button">ТЕЛ: 8 800 770 09 90</button>
         </div>
         <div class="footer-center">
             <ul class="footer-center-header">
@@ -199,7 +206,7 @@
                         <li>Женское</li>
                         <li>Мужское</li>
                         <li>Дети</li>
-                        <li>Колекция</li>
+                        <li>Коллекция</li>
                     </ul>
                 </li>
                 <li>О нас
@@ -212,9 +219,9 @@
             </ul>
         </div>
         <div class="footer-right">
-            <p>Скачать приложений</p>
-            <img style="margin-right: 20px;" src="./images/appstore.png" alt="">
-            <img src="./images/googleplay.png" alt="">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
         </div>
     </footer>
     <script src="./js/script.js" defer></script>

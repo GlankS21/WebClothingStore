@@ -9,40 +9,25 @@
     <title>Shop-Project</title>
 </head>
 <body>
-    <!--Header-->
-    <header>
-        <div class="logo">
-            <a href="index.html"><img style="width: 6em;" src="images/logo.png" alt="logo" loading="lazy"></a>
+    <!-- Header -->
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
         </div>
-        <div class="menu-main">
-            <div class="mobile-menu">
+        <nav aria-label="Главное меню">
+            <!-- <div class="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> -->
             <ul class="menu">
-                <li><a>ЖЕНСКОЕ</a>
-                    <ul class="sub-menu">
-                        <li><a href="category.html">Новинки</a></li>
-                        <li><a href="category.html">Верхняя одежда</a></li>
-                        <li><a href="category.html">Джинсы</a></li>
-                        <li><a href="category.html">Коллекция</a></li>
-                    </ul>
-                </li>
-                <li><a>МУЖСКОЕ</a>
-                    <ul class="sub-menu">
-                        <li><a href="category.html">Новинки</a></li>
-                        <li><a href="category.html">Верхняя одежда</a></li>
-                        <li><a href="category.html">Джинсы</a></li>
-                        <li><a href="category.html">Коллекция</a></li>
-                    </ul>
-                </li>
-                <li><a>ДЕТИ</a>
-                </li>
-                <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
-                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
             </ul>
-            <div class="sub-mobile-menu">
+            <!-- <div class="sub-mobile-menu">
                 <ul class="menu-mb">
                     <li><a>ЖЕНСКОЕ</a>
                         <ul class="sub-menu-mb">
@@ -70,113 +55,126 @@
                     <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
                     <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
                 </ul>
-            </div>
-        </div>
+            </div> -->
+        </nav>
         <ul class="others">
-            <li><input placeholder="Search" type="text"> <i class="fas fa-search"></i></li>
-            <li><a class="fa fa-user" href="login.html" aria-hidden="true"></a></li>
-            <li><a class="fa fa-shopping-bag" href="cart.html" aria-hidden="true"></a></li>
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
         </ul>
     </header>
     <!--Delivery-->
-    <div id="delivery">
-        <div class="container">
-            <div class="delivery-top-wrap">
-                <div class="delivery-top">
-                    <div class="delivery-top-delivery delivery-top-item">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="delivery-top-address delivery-top-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="delivery-top-payment delivery-top-item">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
+    <section id="delivery">
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-top-address cart-top-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt"></i>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="delivery-content" style="display: flex;">
-                <div class="delivery-content-left">
-                    <p>Пожалуйста, выберите адрес доставки</p>
-                    <div class="delivery-content-left-login row">
-                        <p> <i class="fas fa-sign-in-alt"></i>Войдите (если у вас уже есть аккаунт)</p>
+        <div class="delivery-content">
+            <div class="delivery-content-left">
+                <p class="section-title">Пожалуйста, выберите адрес доставки</p>
+                <div class="delivery-login row">
+                    <p onclick="window.location.href='login.html'"><i class="fas fa-sign-in-alt"></i> Войдите (если у вас уже есть аккаунт)</p>
+                </div>
+                <div class="delivery-user-type">
+                    <label>
+                        <input type="radio" name="loaikhach" checked>
+                        <span><strong>Розничный покупатель</strong> (Если вы не хотите сохранять информацию)</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="loaikhach" checked>
+                        <span><strong>Зарегистрация</strong> (Создайте новый аккаунт, используя информацию ниже)</span>
+                    </label>
+                </div>
+          
+                <div class="delivery-input-group row">
+                    <div class="input-item">
+                        <label for="first-name">Фамилия <span class="required">*</span></label>
+                        <input type="text" id="first-name" name="first-name" required>
                     </div>
-                    <div class="delivery-content-left-retail" style="display: flex;">
-                        <input checked name="loaikhach" type="radio">
-                        <p><span style="font-weight: bold;">Розничный покупатель</span> (Если вы не хотите сохранять информацию)</p>
+                    <div class="input-item">
+                        <label for="last-name">Имя <span class="required">*</span></label>
+                        <input type="text" id="last-name" name="last-name" required>
                     </div>
-                    <div class="delivery-content-left-regis" style="display: flex;">
-                        <input checked name="loaikhach" type="radio">
-                        <p><span style="font-weight: bold;">Зарегистрация</span> (Создайте новый аккаунт, используя информацию ниже)</p>
+                    <div class="input-item">
+                        <label for="email">Почта <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="delivery-content-left-input-top row">
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="first-name">Фамилия <span style="color: red;">*</span></label>
-                            <input type="text" id="first-name" name="first-name" required>
-                        </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="last-name">Имя <span style="color: red;">*</span></label>
-                            <input type="text" id="last-name" name="last-name" required>
-                        </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="email">Почта <span style="color: red;">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="telephone">Телефон <span style="color: red;">*</span></label>
-                            <input type="tel" id="telephone" name="telephone" required>
-                        </div>
-                    </div>
-                    <div class="delivery-content-left-input-bottom">
-                        <label for="address">Адрес <span style="color: red;">*</span></label>
-                        <input type="text" id="address" name="address" required>
-                    </div>                                       
-                    <div class="delivery-content-left-button" style="display: flex;">
-                        <a href="cart.html"><span>&#171;</span><p>Вернуться</p></a>
-                        <button class="text-uppercase btn" onclick="window.location.href='payment.html'">Оплата и доставка</button>
+                    <div class="input-item">
+                        <label for="telephone">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="telephone" name="telephone" required>
                     </div>
                 </div>
-                <div class="delivery-content-right">
-                    <table>
+                <div class="delivery-address">
+                    <label for="address">Адрес <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="delivery-buttons">
+                    <a href="cart.html" class="back-button">
+                        <span>&#171;</span>
+                        <p>Вернуться</p>
+                    </a>
+                    <button class="button text-uppercase" onclick="window.location.href='payment.html'">Оплата и доставка</button>
+                </div>
+            </div>
+        
+            <div class="delivery-content-right">
+                <table class="summary-table">
+                    <thead>
                         <tr>
                             <th>Название</th>
                             <th>Скидка</th>
                             <th>Количество</th>
                             <th>Сумма</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <th style="font-weight: 400;">Рубашка-поло в горизонтальную полоску MS 57E2940</th>
-                            <th style="font-weight: 400;">-30%</th>
-                            <th style="font-weight: 400;">1</th>
-                            <th style="font-weight: 400;">999 ₽</th>
+                            <td>Рубашка-поло в горизонтальную полоску MS 57E2940</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>999 ₽</td>
                         </tr>
                         <tr>
-                            <th style="font-weight: 400;">Рубашка-поло в горизонтальную полоску MS 57E2940</th>
-                            <th style="font-weight: 400;">-30%</th>
-                            <th style="font-weight: 400;">1</th>
-                            <th style="font-weight: 400;">999 ₽</th>
+                            <td>Рубашка-поло в горизонтальную полоску MS 57E2940</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>999 ₽</td>
                         </tr>
-                        <tr>
-                            <th style="font-weight: bold;" colspan="3">Итого</th>
-                            <th style="font-weight: bold;"><p>1998 ₽</p></th>
+                        <tr class="summary-total">
+                            <td colspan="3"><strong>Итого</strong></td>
+                            <td><strong>1998 ₽</strong></td>
                         </tr>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </div>
-    <!--Footer-->
+          </div>
+          
+    </section>
+    <!-- Footer -->
     <footer>
         <div class="footer-left">
-            <ul class="icon">
-                <li><img src="./images/icon/facebook.svg" alt=""></li>
-                <li><img src="./images/icon/google.svg" alt=""></li>
-                <li><img src="./images/icon/instagram.svg" alt=""></li>
-                <li><img src="./images/icon/pinteres.svg" alt=""></li>
-                <li><img src="./images/icon/youtube.svg" alt=""></li>
-            </ul>
-            <button>ТЕЛ: 8 800 770 09 90</button>
+        <ul class="icon">
+            <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+            <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+            <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+        </ul>
+        <button type="button">ТЕЛ: 8 800 770 09 90</button>
         </div>
         <div class="footer-center">
             <ul class="footer-center-header">
@@ -186,7 +184,7 @@
                         <li>Женское</li>
                         <li>Мужское</li>
                         <li>Дети</li>
-                        <li>Колекция</li>
+                        <li>Коллекция</li>
                     </ul>
                 </li>
                 <li>О нас
@@ -199,9 +197,9 @@
             </ul>
         </div>
         <div class="footer-right">
-            <p>Скачать приложений</p>
-            <img style="margin-right: 20px;" src="./images/appstore.png" alt="">
-            <img src="./images/googleplay.png" alt="">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
         </div>
     </footer>
     <script src="./js/script.js" defer></script>
