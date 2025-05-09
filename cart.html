@@ -64,8 +64,8 @@
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </li>
-            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
             <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
         </ul>
     </header>
     <!--Cart-->
@@ -146,6 +146,31 @@
                         </div>
                     </td>
                   </tr>
+                  <tr>
+                    <td class="product_img"><img src="./images/sp1.webp" alt="product"></td>
+                    <td class="product_details">
+                        <div class="table_between">
+                            <p class="product_name">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product_price">999 ₽</p>
+                        </div>
+                        <div class="product_color">
+                            <p>Свет: </p>
+                            <img src="./images/color004.png" alt="">
+                        </div>
+                        <div class="product_size">
+                            <p>Размер: </p>
+                            <p>L</p>
+                        </div>
+                        <div class="table_between">
+                            <div class="product_quantity">
+                                <input type="number" value="1" min="0">
+                                <div class="product_quantity-increase">+</div>
+                                <div class="product_quantity-decrease">-</div>
+                            </div>
+                            <div class="product_delete"><i class="fa-solid fa-trash-can"></i></div>
+                        </div>
+                    </td>
+                  </tr>
                 </tbody>
             </table>              
             <!-- Right Content -->
@@ -177,11 +202,10 @@
                     <button class="button" onclick="window.location.href='category.html'">Продолжить покупку</button>
                     <button class="button" onclick="window.location.href='delivery.html'">Платить</button>
                 </div>
-            
-              <div class="cart-content-right-login">
-                <p class="text-uppercase">Аккаунт</p>
-                <p><a href="login.html" style="font-weight: bold;">Войдите</a> в свой аккаунт, чтобы заработать членские баллы</p>
-              </div>
+                <div class="cart-content-right-login">
+                  <p class="text-uppercase">Аккаунт</p>
+                  <p><a href="login.html" style="font-weight: bold;">Войдите</a> в свой аккаунт, чтобы заработать членские баллы</p>
+                </div>
             </div>
         </div>
     </section>

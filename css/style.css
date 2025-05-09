@@ -1000,16 +1000,17 @@ footer {
     border: 1px solid #ddd;
     padding: 4.5rem 4.5rem 2.25rem 4.5rem;
     margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 .info-container-right h1 {
     line-height: 2rem;
     font-size: 1.875rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
 }
 .info-container-right p {
   font-size: 1rem;
-  margin-bottom: 1.875rem !important;
 }
 .information-location {
   padding-top: 3.75rem;
@@ -1184,7 +1185,7 @@ textarea.form-control {
 }
 @media (max-width: 1024px) {
     html{
-        font-size: 12px ;
+        font-size: 14px ;
     }
     /* BREADCRUMB */
     /* .breadcrumb__list {
@@ -1215,8 +1216,9 @@ textarea.form-control {
         margin: 5rem 0;
     }
     /* PADDING SCREENS */
-    .category, .product, #cart, #payment, #delivery,#information, .product-related{
+    .category, .product, #cart, #payment, #delivery,#information, .product-related, #login, #regis{
         padding: 0 5vw;
+        margin: 0;
     }
     /* ---------Index------------- */
     header{
@@ -1365,8 +1367,18 @@ textarea.form-control {
         padding: 0;
         width: 100%;
     }
+    .product-name, .product-price{
+        font-size: 24px;
+    }
+    .product-msp, .item-side-name, p{
+        font-size: 14px;
+    }
+    .item-size-title{
+        font-size: 14px !important;
+    }
     .product-related-title{
         margin: 40px 0 20px;
+        font-size: 20px;
     }
     .product-related > .product-content{
         margin: 0;
@@ -1398,15 +1410,21 @@ textarea.form-control {
         display: block;
         width: 100%;
     }
+    .cart-content-left-mobile tr {
+        display: flex;
+        position: relative;
+        padding-bottom: 16px;
+        padding-top: 16px;
+        border-bottom: 1px solid #ddd;
+    }
     .cart-content-left-mobile .product_img {
         width: 30vw;
+        min-width: 123px;
     }
     .cart-content-left-mobile .product_img img {
         width: 100%;
-        height: auto;
     }
     .cart-content-left-mobile .product_details {
-        width: 60vw;
         display: flex;
         flex-direction: column;
         gap: 20px; 
@@ -1471,7 +1489,126 @@ textarea.form-control {
         left: 0;
         top: 0;
     }
-    
+    .cart-content-right{
+        border: none;
+        padding-left: 0;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .cart-content-right table tr{
+        display: none;
+    }
+    .cart-content-right table tr:last-child{
+        display: table-row;
+        border-top: 1px solid #ddd;
+    }
+    .cart-content-right-text{
+        display: none;
+    }
+    .cart-content-right-button{
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 20px;
+    }
+    .cart-content-right-button > button{
+        margin: 0 !important;
+    }
+    .cart-content-right-login p{
+        font-size: 14px;
+        line-height: 24px;
+    }
+     /* ------------- DELIVERY ----------- */
+    .delivery-content{
+        flex-direction: column;
+        margin-top: 15px;
+        /* gap: 30px; */
+    }
+    .delivery-user-type{
+        margin-bottom: 30px;
+    }
+    .delivery-input-group{
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+     /* ------------- PAYMENT ----------- */
+    .payment-content{
+        flex-direction: column;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    .payment-content-left p{
+        line-height: 24px;
+    }
+    .payment-section p{
+        margin-bottom: 5px;
+    }
+    .payment-content-right{
+        border-left: none;
+        padding-left: 0;
+    }
+    .payment-content-right-title{
+        display: block !important;
+        font-weight: bold;
+        line-height: 24px;
+    }
+    .payment-button > .button{
+        width: 100%;
+    }
+    /* ------------- REGISTATION ----------- */
+    #regis{
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    #regis > h1{
+        display: block !important;
+        font-size: 24px;
+        font-weight: normal;
+        height: 50px;
+        text-align: center;
+    }
+    #regis form{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .regis-content-left h4{
+        font-size: 16px;
+    }
+    .regis-content-left > .regis-content-left-block{
+        flex-direction: column;
+    }
+    /* ------------- REGISTATION ----------- */
+    #login{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .login-container-left, .login-container-right{
+        max-width: 100%;
+    }
+    .login-container-left h1, .login-container-right h1{
+        font-size: 24px;
+        font-weight: normal;
+        height: 50px;
+    }
+    .login-container-left p, .login-container-right p{
+        line-height: 24px;
+    }
+    /* ------------- INFORMATION ----------- */
+    .information-container{
+        flex-direction: column;
+    }
+    .info-container-right{
+        border: none;
+        padding: 0;
+        margin: 24px 0 50px;
+    }
+    .information-location{
+        display: none;
+    }
 }
 
   
