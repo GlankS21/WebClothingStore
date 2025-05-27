@@ -1,1 +1,1 @@
-a sales site for the subject "веб технологии"
+A sales site for the subject "веб технологии"
