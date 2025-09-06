@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <?php require_once "./components/header.php"; ?>
 <section id="regis">
-  <h1 style="display: none;">Регистрация</h1>
+  <h1>Регистрация</h1>
   <form action="registation.php" method="POST">
     <div class="regis-content-left">
         <div class="regis-content-left-title">

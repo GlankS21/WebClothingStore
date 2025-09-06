@@ -66,24 +66,24 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <div class="delivery-input-group row">
                 <div class="input-item">
-                    <label for="first-name">Фамилия <span class="required">*</span></label>
+                    <label for="first-name">Фамилия <span class="required" style="color: red">*</span></label>
                     <input type="text" id="first-name" name="first-name" required>
                 </div>
                 <div class="input-item">
-                    <label for="last-name">Имя <span class="required">*</span></label>
+                    <label for="last-name">Имя <span class="required" style="color: red">*</span></label>
                     <input type="text" id="last-name" name="last-name" required>
                 </div>
                 <div class="input-item">
-                    <label for="email">Почта <span class="required">*</span></label>
+                    <label for="email">Почта <span class="required" style="color: red">*</span></label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-item">
-                    <label for="telephone">Телефон <span class="required">*</span></label>
+                    <label for="telephone">Телефон <span class="required" style="color: red">*</span></label>
                     <input type="tel" id="telephone" name="telephone" required>
                 </div>
             </div>
             <div class="delivery-address">
-                <label for="address">Адрес <span class="required">*</span></label>
+                <label for="address">Адрес <span class="required" style="color: red">*</span></label>
                 <input type="text" id="address" name="address" required>
             </div>
             <div class="delivery-buttons">

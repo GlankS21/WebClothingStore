@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!-- Header -->
+     <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
+        </div>
+        <nav aria-label="Главное меню">
+            <ul class="menu">
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sub-mobile-menu">
+                <ul class="menu-mb">
+                    <li class="logo-mb text-uppercase"><a href="index.html">Главная</a></li>
+                    <li><a>ЖЕНСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>МУЖСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Школа</a></li>
+                            <li><a href="category.html">Девочкам</a></li>
+                            <li><a href="category.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="others">
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+        </ul>
+    </header>
+    <!--Delivery-->
+    <section id="payment">
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-top-address cart-top-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="payment-content row">
+            <div class="payment-content-left">
+                <div class="payment-section">
+                    <h3>Способ доставки</h3>
+                    <div class="payment-option">
+                        <input type="radio" id="express-delivery" name="delivery-method">
+                        <label for="express-delivery">Экспресс-доставка</label>
+                    </div>
+                </div>
+          
+                <div class="payment-section">
+                    <h3>Способ оплаты</h3>
+                    <p>Каждая транзакция безопасна и зашифрована. Информация о кредитной карте никогда не будет сохранена.</p>
+                    
+                    <div class="payment-option">
+                        <input type="radio" id="credit-card" name="method-payment">
+                        <label for="credit-card">Оплата кредитной картой (OnePay)</label>
+                        <div class="payment-logo">
+                            <img src="./images/visa.png" alt="Visa">
+                        </div>
+                    </div>
+                  
+                    <div class="payment-option">
+                        <input type="radio" id="bank-card" name="method-payment">
+                        <label for="bank-card">Оплата банковской картой (OnePay)</label>
+                        <div class="payment-logo">
+                            <img src="./images/mastercard.png" alt="Mastercard">
+                        </div>
+                    </div>
+                  
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="method-payment">
+                        <label for="cash">Наличными</label>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-content-right">
+                <p class="payment-content-right-title" style="display: none;">Промокод</p>
+                <div class="payment-discount-group">
+                    <input type="text" placeholder="Код скидки/подарок">
+                    <button><i class="fas fa-check"></i></button>
+                </div>
+                <div class="payment-discount-group">
+                    <input type="text" placeholder="Код соавтора">
+                    <button><i class="fas fa-check"></i></button>
+                </div>
+          
+                <div class="payment-mnv">
+                  <select name="payment-discount" id="payment-discount">
+                    <option value="">Выберите код лояльности сотрудника</option>
+                    <option value="D345">D345</option>
+                    <option value="A345">A345</option>
+                    <option value="E345">E345</option>
+                    <option value="I345">I345</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="payment-button">
+            <button class="button text-uppercase" onclick="window.location.href='index.html'">Продолжить оплату</button>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+        <ul class="icon">
+            <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+            <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+            <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+        </ul>
+        <button type="button">ТЕЛ: 8 800 770 09 90</button>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-header">
+                <li>Главная</li>
+                <li>Каталог
+                    <ul>
+                        <li>Женское</li>
+                        <li>Мужское</li>
+                        <li>Дети</li>
+                        <li>Коллекция</li>
+                    </ul>
+                </li>
+                <li>О нас
+                    <ul>
+                        <li>Адрес</li>
+                        <li>Почта</li>
+                        <li>Телефон</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
+        </div>
+    </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
+</body>
+</html>

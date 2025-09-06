@@ -24,13 +24,15 @@ $categories = $categoryClass->getCategories();
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>SHOP MANAGER</h1>
+    <div id="header">
+        <h1>SHOP MANAGER</h1>
+        <a href="../../public/index.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </div>
     <section>
         <ul class="navigation">
             <li style="background-color: #34495e;">CATEGORY</li>
             <li onclick="window.location.href='brandManager.php'">BRAND</li>
             <li onclick="window.location.href='productManager.php'">PRODUCT</li>
-            <li onclick="window.location.href='userManager.php'">USER CART</li>
         </ul>
         <div class="content">
             <h2>ADD CATEGORY</h2>
@@ -66,5 +68,6 @@ $categories = $categoryClass->getCategories();
             </table>
         </div>
     </section>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
 </body>
 </html>

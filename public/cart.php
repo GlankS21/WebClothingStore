@@ -3,15 +3,17 @@ session_start();
 require_once '../ADMIN/config/config.php';
 require_once '../ADMIN/service/productService.php';
 require_once '../ADMIN/service/cartService.php';
+
 $cartItems = [];
 $totalQuantity = 0;
 $totalPrice = 0;
 $freeShippingThreshold = 2500;
 $amountToFreeShipping = 0;
+
 if (isset($_SESSION['user_id'])) {
     $cartService = new CartService($conn);
     $productService = new ProductService($conn);
-    $cart = $cartService->search_by_id($_SESSION['user_id']); 
+    $cart = $cartService->search_by_id($_SESSION['user_id']);
     foreach ($cart as $item) {
         $product = $productService->show_product_by_id($item['product_id']);
         $cartItems[] = [
@@ -19,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
             'name' => $product['name'],
             'image' => $product['image'],
             'price' => $product['price'],
-            'color' => $item['hex_code'],      
+            'color' => $item['hex_code'],
             'size' => $productService->get_size_name_by_id($item['size_id']),
             'quantity' => $item['quantity']
         ];
@@ -27,7 +29,8 @@ if (isset($_SESSION['user_id'])) {
         $totalQuantity += $item['quantity'];
         $totalPrice += $item['quantity'] * $product['price'];
     }
-} else {
+} 
+else {
     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         $cartItems = $_SESSION['cart'];
         foreach ($cartItems as $item) {
@@ -36,12 +39,15 @@ if (isset($_SESSION['user_id'])) {
         }
     }
 }
+$_SESSION['total_cart_quantity'] = $totalQuantity;
 $amountToFreeShipping = max(0, $freeShippingThreshold - $totalPrice);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     $action = $_POST['action'];
     $product_id = $_POST['product_id'] ?? null;
     $color = $_POST['color'] ?? null;
     $size = $_POST['size'] ?? null;
+
     if ($product_id && $color && $size) {
         if (isset($_SESSION['user_id'])) {
             $cartService = new CartService($conn);
@@ -59,11 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 }
             }
         }
-        // Increase/Decrease quatity
+
+        // Increase/Decrease quantity
         if ($action === 'increase') $newQuantity = $currentQuantity + 1;
         elseif ($action === 'decrease') $newQuantity = $currentQuantity - 1;
         elseif ($action === 'delete') $newQuantity = 0;
         else $newQuantity = $currentQuantity;
+
         if ($newQuantity <= 0) {
             if (isset($_SESSION['user_id'])) $cartService->delete_product($_SESSION['user_id'], $product_id, $color, $size);
             else {
@@ -191,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     </tr>
                 <?php endforeach; ?>
                 <?php else: ?>
-                <tr><td colspan="2" style="text-align:center;">Корзина пуста</td></tr>
+                <tr><td colspan="1" style="text-align:center;">Корзина пуста</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>   

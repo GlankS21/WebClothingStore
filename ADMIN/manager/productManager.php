@@ -32,13 +32,15 @@ if (isset($_POST['category_id']) && is_numeric($_POST['category_id'])) {
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
-    <h1>SHOP MANAGER</h1>
+    <div id="header">
+        <h1>SHOP MANAGER</h1>
+        <a href="../../public/index.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </div>
     <section>
         <ul class="navigation">
             <li onclick="window.location.href='categoryManager.php'">CATEGORY</li>
             <li onclick="window.location.href='brandManager.php'">BRAND</li>
             <li style="background-color: #34495e;">PRODUCT</li>
-            <li onclick="window.location.href='userManager.php'">USER CART</li>
         </ul>
         <div class="content">
             <h2>ADD PRODUCT</h2>
@@ -127,6 +129,7 @@ if (isset($_POST['category_id']) && is_numeric($_POST['category_id'])) {
             </table> 
         </div>
     </section>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
 </body>
 <script>
 document.getElementById('category_id').addEventListener('change', function () {

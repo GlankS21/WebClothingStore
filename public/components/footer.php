@@ -28,7 +28,7 @@ foreach ($brands as $b) {
     </div>
     <div class="footer-center">
         <ul class="footer-center-header">
-            <li><a href="#">Главная</a></li>
+            <li><a href="#">ГЛАВНАЯ</a></li>
             <li class="has-subfooter">
                 <a>КАТАЛОГ</a>
                 <ul class="sub-footer-center">

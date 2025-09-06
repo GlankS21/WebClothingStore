@@ -56,9 +56,9 @@
     <section class="information-location">
         <h3>Найдите нас на Google Maps</h3>
         <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A7ba50c3bb6cac8b2115df2cd4a24da49ce8617171d6820b5de07c8dbec7efe50&amp;source=constructor"
-            width="100%" height="400" frameborder="0"
-            title="Карта расположения">
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3998.0722416747785!2d30.3603199!3d59.9315428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631e1e6a012ed%3A0xa35e02c63c59d6c9!2sStokmann!5e0!3m2!1sen!2sfr!4v1750168365799!5m2!1sen!2sfr"
+            height="400"
+            title="Карта расположения" style="width: 100%; border: 0;">
         </iframe>
     </section>
 </section>

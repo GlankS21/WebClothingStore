@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!-- Header -->
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
+        </div>
+        <nav aria-label="Главное меню">
+            <ul class="menu">
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sub-mobile-menu">
+                <ul class="menu-mb">
+                    <li class="text-uppercase"><a href="index.html">Главная</a></li>
+                    <li><a>ЖЕНСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>МУЖСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Школа</a></li>
+                            <li><a href="category.html">Девочкам</a></li>
+                            <li><a href="category.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="others">
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+        </ul>
+    </header>
+    <!--Delivery-->
+    <section id="delivery">
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-top-address cart-top-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="delivery-content">
+            <div class="delivery-content-left">
+                <p class="section-title">Пожалуйста, выберите адрес доставки</p>
+                <div class="delivery-login row">
+                    <p onclick="window.location.href='login.html'"><i class="fas fa-sign-in-alt"></i> Войдите (если у вас уже есть аккаунт)</p>
+                </div>
+                <div class="delivery-user-type">
+                    <label>
+                        <input type="radio" name="loaikhach" checked>
+                        <span><strong>Розничный покупатель</strong> (Если вы не хотите сохранять информацию)</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="loaikhach" checked>
+                        <span><strong>Зарегистрация</strong> (Создайте новый аккаунт, используя информацию ниже)</span>
+                    </label>
+                </div>
+          
+                <div class="delivery-input-group row">
+                    <div class="input-item">
+                        <label for="first-name">Фамилия <span class="required">*</span></label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="last-name">Имя <span class="required">*</span></label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="email">Почта <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="telephone">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+                <div class="delivery-address">
+                    <label for="address">Адрес <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="delivery-buttons">
+                    <a href="cart.html" class="back-button">
+                        <span>&#171;</span>
+                        <p>Вернуться</p>
+                    </a>
+                    <button class="button text-uppercase" onclick="window.location.href='payment.html'">Оплата и доставка</button>
+                </div>
+            </div>
+        
+            <div class="delivery-content-right">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Скидка</th>
+                            <th>Количество</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Рубашка-поло в горизонтальную полоску MS 57E2940</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>999 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Рубашка-поло в горизонтальную полоску MS 57E2940</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>999 ₽</td>
+                        </tr>
+                        <tr class="summary-total">
+                            <td><strong>Итого</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>1998 ₽</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <div class="delivery-mobile-button" style="display: none;">
+                <button class="button text-uppercase" onclick="window.location.href='payment.html'">Оплата и доставка</button>
+            </div>
+          </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+        <ul class="icon">
+            <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+            <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+            <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+        </ul>
+        <button type="button">ТЕЛ: 8 800 770 09 90</button>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-header">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Каталог</a>
+                    <ul class="sub-footer-center">
+                        <li>Женское</li>
+                        <li>Мужское</li>
+                        <li>Дети</li>
+                        <li>Коллекция</li>
+                    </ul>
+                </li>
+                <li><a href="">О нас</a>
+                    <ul class="sub-footer-center">
+                        <li>Адрес</li>
+                        <li>Почта</li>
+                        <li>Телефон</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
+        </div>
+    </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
+</body>
+<script>
+    document.querySelectorAll('.footer-center-header > li.menu-item').forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+        // Toggle the open class
+        this.classList.toggle('open');
+        
+        // Toggle the visibility of the submenu
+        var submenu = this.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});
+
+</script>
+</html>

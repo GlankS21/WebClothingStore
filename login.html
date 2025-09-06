@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!---------------- Header ----------------------->
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
+        </div>
+        <nav aria-label="Главное меню">
+            <ul class="menu">
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sub-mobile-menu">
+                <ul class="menu-mb">
+                    <li class="logo-mb text-uppercase"><a href="index.html">Главная</a></li>
+                    <li><a>ЖЕНСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>МУЖСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Школа</a></li>
+                            <li><a href="category.html">Девочкам</a></li>
+                            <li><a href="category.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="others">
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+        </ul>
+    </header>
+    <!--Login-->
+    <section id="login">
+        <div class="login-container-left">
+            <h1>У вас уже есть аккаунт?</h1>
+            <p>Если у вас уже есть аккаунт, войдите в систему, чтобы накапливать баллы за участие и получать более выгодные предложения!</p>
+            <form id="login-form" action="index.html" method="POST">
+                <div class="form-group">
+                <input type="email" id="login-email" name="email" class="login-input" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                <input type="password" id="login-password" name="password" class="login-input" placeholder="Password" required>
+                </div>
+                <div class="login-container-left-remember">
+                    <label>
+                        <input type="checkbox" class="checkboxs" name="customer_remember" value="1">
+                        <span>Запомнить меня</span>
+                    </label>
+                </div>
+                <button type="submit" class="text-uppercase button">Логин</button>
+            </form>
+        </div>
+  
+        <div class="login-container-right">
+            <h1>Новый клиент</h1>
+            <p>Если у вас еще нет аккаунта, используйте этот вариант, чтобы перейти к форме регистрации. Предоставив свои данные, процесс покупки станет более приятным и быстрым!</p>
+            <button class="text-uppercase button" onclick="window.location.href='registation.html'">Регистрация</button>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <ul class="icon">
+                <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+                <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+                <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+                <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+                <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+            </ul>
+            <button type="button">ТЕЛ: 8 800 770 09 90</button>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-header">
+                <li>Главная</li>
+                <li>Каталог
+                    <ul>
+                        <li>Женское</li>
+                        <li>Мужское</li>
+                        <li>Дети</li>
+                        <li>Коллекция</li>
+                    </ul>
+                </li>
+                <li>О нас
+                    <ul>
+                        <li>Адрес</li>
+                        <li>Почта</li>
+                        <li>Телефон</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
+        </div>
+    </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
+</body>
+</html>

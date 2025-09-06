@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 require_once '../ADMIN/config/config.php';
 require_once '../ADMIN/service/productService.php';
 require_once '../ADMIN/service/cartService.php';
@@ -26,21 +26,28 @@ if (isset($_GET['id'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = $_POST['product_id'] ?? null;
     $color = $_POST['color'] ?? null;
-    $size = $service->get_size_name_by_id($_POST['size']) ?? null;
+    // Note: get_size_name_by_id likely expects the size ID, not the name, so we pass $_POST['size'] directly.
+    // If your cartService.php or database expects the name, adjust get_size_name_by_id or this line.
+    $size_id_for_db = $_POST['size'] ?? null; 
+    $size_name_for_session_cart = $service->get_size_name_by_id($size_id_for_db) ?? null;
     $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
-    // Если пользователь не найден
+
+    // Check if product_id is valid
     if ($product_id) {
         $products = $service->show_product_by_id($product_id);
         if ($products) {
+            // Check if user is logged in
             if (isset($_SESSION['user_id'])) {
                 $cartService = new CartService($conn);
-                $cartService->add_product($_SESSION['user_id'], $product_id, $color, $_POST['size'], $quantity);
-            }else{
+                // Pass the size ID directly to add_product if your service expects it
+                $cartService->add_product($_SESSION['user_id'], $product_id, $color, $size_id_for_db, $quantity);
+            } else {
+                // Handle guest user cart in session
                 if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
                 $found = false;
-                foreach ($_SESSION['cart'] as &$product) {
-                    if ($product['product_id'] == $product_id && $product['color'] == $color && $product['size'] == $size) {
-                        $product['quantity'] += $quantity;
+                foreach ($_SESSION['cart'] as &$product_in_cart) { // Renamed $product to $product_in_cart to avoid conflict
+                    if ($product_in_cart['product_id'] == $product_id && $product_in_cart['color'] == $color && $product_in_cart['size'] == $size_name_for_session_cart) {
+                        $product_in_cart['quantity'] += $quantity;
                         $found = true;
                         break;
                     }
@@ -51,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'image'      => $products['image'],
                         'name'       => $products['name'],
                         'color'      => $color,
-                        'size'       => $size,
+                        'size'       => $size_name_for_session_cart, // Use size name for session display
                         'price'      => $products['price'],
                         'quantity'   => $quantity
                     ];
@@ -67,7 +74,6 @@ $productRelated = $service->get_random_products();
 ?>
 <?php require_once "./components/header.php"; ?>
 <section class="product">
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <ol class="breadcrumb__list">
             <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.php">Главная</a></li>
@@ -88,7 +94,6 @@ $productRelated = $service->get_random_products();
             <?php endif; ?>
         </ol>
     </div>
-    <!-- Product Content -->
     <div class="product-content row">
         <div class="product-content-left row">
             <div class="product-content-left-big-img">
@@ -102,18 +107,18 @@ $productRelated = $service->get_random_products();
             </div>
         </div>
         <div class="product-content-right">
-            <form method="POST" action="product.php">
+            <form method="POST" action="product.php" onsubmit="return validateProductForm()">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id']) ?>">
                 <h2 class="product-name text-uppercase"><?= htmlspecialchars($product['name']) ?></h2>
                 <p class="product-msp">MSP: <?= htmlspecialchars($product['product_id']) ?></p>
                 <p class="product-price"><?= htmlspecialchars(number_format($product['price'], 0, '.', ' ')) ?> ₽</p>
-                <!-- Color -->
+
                 <div class="item-side item-side-color">
                     <p class="item-side-name">Свет:</p>
                     <div class="sub-list-side" style="display: flex;">
                         <?php foreach ($colors as $c): ?>
                             <label class="item-sub-list po-relative">
-                                <input class="field-cat" type="radio" name="color" value="<?= htmlspecialchars($c['hex_code']) ?>" required>
+                                <input class="field-cat" type="radio" name="color" value="<?= htmlspecialchars($c['hex_code']) ?>">
                                 <span class="item-sub-title" data-toggle="tooltip" data-placement="bottom" title="<?= htmlspecialchars($c['name']) ?>">
                                     <span style="display: inline-block; width: 100%; height: 100%; border-radius: 50%; background-color: <?= htmlspecialchars($c['hex_code']) ?>; border: 1px solid #ccc;"></span>
                                 </span>
@@ -121,25 +126,26 @@ $productRelated = $service->get_random_products();
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <!-- Size -->
+
                 <div class="item-side item-side-size">
                     <p class="item-side-name">Размер</p>
                     <div class="sub-list-side" style="display: flex;">
                         <?php foreach ($sizes as $size): ?>
-                        <label class="item-sub-list">
-                            <input class="field-cat" type="radio" name="size" value="<?= htmlspecialchars($size['id']) ?>" required>
-                            <span class="item-sub-title"><?= htmlspecialchars($size['name']) ?></span>
-                        </label>
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="size" value="<?= htmlspecialchars($size['id']) ?>">
+                                <span class="item-sub-title"><?= htmlspecialchars($size['name']) ?></span>
+                            </label>
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <p class="item-size-title" style="color: #d60f3c; font-size: 1.25rem;">Пожалуйста, выберите размер</p>
-                <!-- Quantity -->
+
+                <p class="item-size-title" id="selection-message" style="color: #d60f3c; font-size: 1.25rem; display: none;">Пожалуйста, выберите свет и размер</p>
+
                 <div class="quantity">
                     <p><strong style="padding-right: 6px;">Количесвто:</strong></p>
                     <input style="width: 50px; text-align: center;" type="number" name="quantity" min="1" value="1" required>
                 </div>
-                <!-- Button -->
+
                 <div class="product-button">
                     <button class="button" type="submit">
                         <i class="bi bi-cart"></i>
@@ -168,7 +174,6 @@ $productRelated = $service->get_random_products();
         </div>
     </div>
 </section>
-<!-- Product Related Section -->
 <div class="product-related">
     <p class="product-related-title text-uppercase">Рекомендуем также</p>
     <ul class="product-content">
@@ -186,5 +191,58 @@ $productRelated = $service->get_random_products();
         <?php endforeach; ?>
     </ul>
 </div>
+
+<script>
+    function validateProductForm() {
+        const colorRadios = document.querySelectorAll('input[name="color"]');
+        const sizeRadios = document.querySelectorAll('input[name="size"]');
+        const selectionMessage = document.getElementById('selection-message');
+
+        let colorSelected = false;
+        for (const radio of colorRadios) {
+            if (radio.checked) {
+                colorSelected = true;
+                break;
+            }
+        }
+
+        let sizeSelected = false;
+        for (const radio of sizeRadios) {
+            if (radio.checked) {
+                sizeSelected = true;
+                break;
+            }
+        }
+
+        if (!colorSelected || !sizeSelected) {
+            selectionMessage.style.display = 'block';
+            return false;
+        } else {
+            selectionMessage.style.display = 'none';
+            return true; 
+        }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const colorRadios = document.querySelectorAll('input[name="color"]');
+        const sizeRadios = document.querySelectorAll('input[name="size"]');
+        const selectionMessage = document.getElementById('selection-message');
+
+        colorRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (document.querySelector('input[name="color"]:checked') && document.querySelector('input[name="size"]:checked')) {
+                    selectionMessage.style.display = 'none';
+                }
+            });
+        });
+
+        sizeRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (document.querySelector('input[name="color"]:checked') && document.querySelector('input[name="size"]:checked')) {
+                    selectionMessage.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 
 <?php require_once "./components/footer.php"; ?>

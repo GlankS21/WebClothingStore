@@ -38,13 +38,15 @@ foreach ($brands as $b) {
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>SHOP MANAGER</h1>
+    <div id="header">
+        <h1>SHOP MANAGER</h1>
+        <a href="../../public/index.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </div>
     <section>
         <ul class="navigation">
             <li onclick="window.location.href='categoryManager.php'">CATEGORY</li>
             <li style="background-color: #34495e;">BRAND</li>
             <li onclick="window.location.href='productManager.php'">PRODUCT</li>
-            <li onclick="window.location.href='userManager.php'">USER CART</li>
         </ul>
         <div class="content">
           <h2><?= $editing ? "EDIT BRAND" : "ADD BRAND" ?></h2>
@@ -100,5 +102,6 @@ foreach ($brands as $b) {
 
         </div>
     </section>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous"></script>
 </body>
 </html>

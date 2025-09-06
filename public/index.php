@@ -15,10 +15,10 @@ foreach ($brands as $b) {
 ?>
 <aside id="Slider">
     <div class="aspect-ratio-169">
-        <img src="images/banner1.webp" alt="Баннер 1" loading="lazy">
-        <img src="images/banner2.webp" alt="Баннер 2" loading="lazy">
-        <img src="images/banner3.webp" alt="Баннер 3" loading="lazy">
-        <img src="images/banner4.webp" alt="Баннер 4" loading="lazy">
+        <img src="images/banner1.webp" alt="Баннер 1" width="1920" height="600">
+        <img src="images/banner2.webp" alt="Баннер 2" width="1920" height="600">
+        <img src="images/banner3.webp" alt="Баннер 3" width="1920" height="600">
+        <img src="images/banner4.webp" alt="Баннер 4" width="1920" height="600">
     </div>
     <div class="dot-container">
         <div class="dot active"></div>

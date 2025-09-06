@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Shop-Project</title>
+</head>
+<body>
+    <!---------------- Header ----------------------->
+    <header header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="Логотип" loading="lazy"/>
+        </div>
+        <nav aria-label="Главное меню">
+            <ul class="menu">
+                <li onclick="window.location.href='category.html'">ЖЕНСКОЕ</li>
+                <li onclick="window.location.href='category.html'">МУЖСКОЕ</li>
+                <li onclick="window.location.href='category.html'">ДЕТИ</li>
+                <li onclick="window.location.href='category.html'">КОЛЛЕКЦИЯ</li>
+                <li onclick="window.location.href='information.html'">ИНФОРМАЦИЯ</li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sub-mobile-menu">
+                <ul class="menu-mb">
+                    <li class="logo-mb text-uppercase"><a href="index.html">Главная</a></li>
+                    <li><a>ЖЕНСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>МУЖСКОЕ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Новинки</a></li>
+                            <li><a href="category.html">Верхняя одежда</a></li>
+                            <li><a href="category.html">Джинсы</a></li>
+                            <li><a href="category.html">Коллекция</a></li>
+                        </ul>
+                    </li>
+                    <li><a>ДЕТИ</a>
+                        <ul class="sub-menu-mb">
+                            <li><a href="category.html">Школа</a></li>
+                            <li><a href="category.html">Девочкам</a></li>
+                            <li><a href="category.html">Мальчикам</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="category.html">КОЛЛЕКЦИЯ</a></li>
+                    <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="others">
+            <li>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск" name="search" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a class="fa fa-shopping-bag" href="cart.html" aria-label="Корзина"></a></li>
+            <li><a class="fa fa-user" href="login.html" aria-label="Вход"></a></li>
+        </ul>
+    </header>
+    <!---------------- Cartegory -------------------->
+    <section class="category">
+        <div class="breadcrumb">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Главная</a></li>
+                <li class="breadcrumb__item"><a class="breadcrumb__link" href="category.html" title="NEW ARRIVAL">ЖЕНСКОЕ</a></li>
+            </ol>
+        </div>
+        <div class="container row">
+            <aside class="category-left">
+                <ul class="list-side">
+                    <li class="item-side item-side-size">
+                        <div class="item-side-title">Размер<span class="icon-plus"><i class="bi bi-plus-lg"></i></span><span class="icon-minus" style="display: none;"><i class="bi bi-dash-lg"></i></span></div>
+                        <div class="sub-list-side" style="display: none;">
+                            <input type="hidden" name="list_size" value="">
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="att_size[]" value="SS">
+                                <span class="item-sub-title">S</span>
+                            </label>
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="att_size[]" value="M">
+                                <span class="item-sub-title">M</span>
+                            </label>
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="att_size[]" value="L">
+                                <span class="item-sub-title">L</span>
+                            </label>
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="att_size[]" value="XL">
+                                <span class="item-sub-title">XL</span>
+                            </label>
+                            <label class="item-sub-list">
+                                <input class="field-cat" type="radio" name="att_size[]" value="XXL">
+                                <span class="item-sub-title">XXL</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="item-side item-side-color">
+                        <div class="item-side-title">Цвет<span class="icon-plus"><i class="bi bi-plus-lg"></i></span><span class="icon-minus" style="display: none;"><i class="bi bi-dash-lg"></i></span></div>
+                        <div class="sub-list-side" style="display: none;">
+                            <input type="hidden" name="hid_color" value="" wfd-id="id10">
+                            <label class="item-sub-list po-relative ">
+                                <input class="field-cat" type="radio" name="att_color[]" value="004">
+                                <span class="item-sub-title" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Đen">
+                                    <img src="./images/color004.png" alt="color">
+                                </span>
+                            </label>  
+                            <label class="item-sub-list po-relative ">
+                                <input class="field-cat" type="radio" name="att_color[]" value="004">
+                                <span class="item-sub-title" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Đen">
+                                    <img src="./images/color004.png" alt="color">
+                                </span>
+                            </label>  
+                        </div>
+                    </li>
+                    <!-- <li class="item-side item-side-price">
+                        <p class="item-side-title">Цена<span class="icon-plus"><i class="bi bi-plus-lg"></i></span><span class="icon-minus" style="display: none;"><i class="bi bi-dash-lg"></i></span></p>
+                        <div class="sub-list-side" style="display: none;">
+                            <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 98.8494%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 98.8494%;"></span></div>
+                            <div class="value-range">
+                                <input type="hidden" name="product_price_from" value="0" wfd-id="id23">
+                                <input type="hidden" name="product_price_to" value="9884937" wfd-id="id24">
+                                <div id="amout-from">0₽</div>
+                                <div id="amout-to">100.000₽</div>
+                            </div>
+                        </div>
+                    </li> -->  
+                </ul>
+                <div class="button" onclick="window.location.href='category.html'">ПОСМОТРЕТЬ</div>
+            </aside>
+            <div class="category-right row">
+                <div class="category-right-top-item">
+                    <p>ЖЕНСКОЕ</p>
+                </div>
+                <div class="category-right-top-item">
+                    <select name="sort-category" id="sort">
+                        <option value="">Популярные </option>
+                        <option value="">Дешевле</option>
+                        <option value="">Дороже</option>
+                    </select>
+                    <i class="bi bi-caret-down-fill select-icon"></i>
+                </div>
+                <ul class="category-right-content row">
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li class="container-item-product">
+                        <img src="./images/sp1.2.webp" alt="Юбка миди из вискозы с перфорацией" />
+                        <div class="product-info">
+                            <p class="product-title">Юбка миди из вискозы с перфорацией</p>
+                            <p class="product-price">999 ₽</p>
+                            <div class="add-to-cart">
+                                <a href="product.html"><i class="bi bi-cart"></i></a>
+                            </div>
+                        </div>   
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <ul class="icon">
+                <li><a href="#"><img src="./images/icon/facebook.svg" alt="Facebook" /></a></li>
+                <li><a href="#"><img src="./images/icon/google.svg" alt="Google" /></a></li>
+                <li><a href="#"><img src="./images/icon/instagram.svg" alt="Instagram" /></a></li>
+                <li><a href="#"><img src="./images/icon/pinteres.svg" alt="Pinterest" /></a></li>
+                <li><a href="#"><img src="./images/icon/youtube.svg" alt="YouTube" /></a></li>
+            </ul>
+            <button type="button">ТЕЛ: 8 800 770 09 90</button>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-header">
+                <li>Главная</li>
+                <li>Каталог
+                    <ul>
+                        <li>Женское</li>
+                        <li>Мужское</li>
+                        <li>Дети</li>
+                        <li>Коллекция</li>
+                    </ul>
+                </li>
+                <li>О нас
+                    <ul>
+                        <li>Адрес</li>
+                        <li>Почта</li>
+                        <li>Телефон</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>Скачать приложение</p>
+            <a href="#"><img src="./images/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="./images/googleplay.png" alt="Google Play" /></a>
+        </div>
+    </footer>
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/72956b8baa.js" crossorigin="anonymous" defer></script>
+</body>
+</html>

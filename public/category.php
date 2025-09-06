@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.php">Главная</a></li>
             <?php if ($categoryName): ?>
                 <li class="breadcrumb__item">
-                    <a class="breadcrumb__link text-uppercase" href="category.php?category=<?= htmlspecialchars($categoryId) ?>">
-                        <?= htmlspecialchars($categoryName) ?>
-                    </a>
+                    <a class="breadcrumb__link text-uppercase"><?= htmlspecialchars($categoryName) ?></a>
                 </li>
             <?php endif; ?>
             <?php if ($brandName): ?>
-                <li class="breadcrumb__item"><span class="breadcrumb__link"><?= htmlspecialchars($brandName) ?></span></li>
+                <li class="breadcrumb__item">
+                    <a class="breadcrumb__link"><?= htmlspecialchars($brandName) ?></a>
+                </li>
             <?php endif; ?>
         </ol>
     </div>

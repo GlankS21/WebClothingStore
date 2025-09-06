@@ -6,12 +6,24 @@
 body {
     font-family: Arial, sans-serif;
 }
-
-h1 {
+#header{
+    display: flex;
+    width: 100%;
     text-align: center;
-    padding: 20px;
     background-color: #081f36;
     color: white;
+}
+#header > h1{
+    flex: 14;
+    line-height: 76px;
+}
+#header > a{
+    flex: 1;
+    line-height: 76px;
+    text-align: center;
+    background-color: #e74c3c;
+    color: #081f36;
+    font-size: 36px;
 }
 section {
     display: flex;
