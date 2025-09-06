@@ -87,7 +87,7 @@
         <ul class="others">
             <li>
                 <form action="#" method="get">
-                    <input type="text" placeholder="Поиск" name="search" />
+                    <input type="text" list="search" placeholder="Поиск" name="search" id="searchInput" />
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </li>
@@ -267,5 +267,40 @@
         </div>
     </footer>
     <script src="./js/script.js" defer></script>
+    <script>
+// Trong tệp script.js của bạn hoặc một tệp search.js mới
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const productItems = document.querySelectorAll('.container-item-product'); // Chọn tất cả các mục sản phẩm trong danh sách
+
+    if (searchInput) {
+        searchInput.addEventListener('keyup', function(event) {
+            const searchTerm = event.target.value.toLowerCase(); // Lấy cụm từ tìm kiếm hiện tại và chuyển sang chữ thường
+
+            productItems.forEach(item => {
+                const productTitleElement = item.querySelector('.product-title');
+                if (productTitleElement) {
+                    const productTitle = productTitleElement.textContent.toLowerCase(); // Lấy tiêu đề sản phẩm và chuyển sang chữ thường
+
+                    if (productTitle.includes(searchTerm)) {
+                        item.style.display = 'block'; // Hiển thị sản phẩm nếu tìm thấy cụm từ tìm kiếm trong tiêu đề
+                    } else {
+                        item.style.display = 'none'; // Ẩn sản phẩm nếu không tìm thấy cụm từ tìm kiếm
+                    }
+                }
+            });
+        });
+
+        // Ngăn chặn gửi biểu mẫu khi nhấp vào nút tìm kiếm để cho phép lọc trực tiếp
+        const searchForm = searchInput.closest('form');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Ngăn chặn hành vi gửi biểu mẫu mặc định
+            });
+        }
+    }
+});
+    </script>
 </body>
 </html>
